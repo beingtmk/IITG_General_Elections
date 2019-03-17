@@ -19,7 +19,7 @@ from . import views
 
 urlpatterns = [
     # url(r'^$',views.siteindex,name="siteindex"),
-    url('', include('general_elections.urls')),
+    url('general_elections/', include('general_elections.urls')),
     url(r'^authentication/', include('authentication.urls', namespace='authentication')),
     url('admin/', admin.site.urls),
 ]

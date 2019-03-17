@@ -32,7 +32,10 @@ def is_volunteer(user):
 # Views
 def voter_login(request):
 	if request.method == "GET":
-		return render(request, 'login.html', {"ll_username" : "beingtmk"})
+		if request.session.get('mail', None):
+			username = request.session.get('mail', None).split('@')[0]
+			return render(request, 'login.html', {"ll_username" : username})
+		else: return redirect('index')
 	elif request.method == "POST":
 		username = request.POST["username"] # Webmail-id
 		token = request.POST["token"] # Provided token

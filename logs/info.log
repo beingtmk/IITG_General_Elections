@@ -35,3 +35,7 @@ INFO 2019-03-17 09:37:21,005 general_elections.views.views_volunteer.volunteer_p
 INFO 2019-03-17 09:37:58,261 general_elections.views.views_voter.voter_login:50 - Voter: beingtmk logged in
 INFO 2019-03-17 09:38:01,535 general_elections.views.views_voter.voter_logout:68 - Voter: beingtmk setting inactive. vote complete.
 INFO 2019-03-17 09:38:01,600 general_elections.views.views_voter.voter_logout:71 - Voter: beingtmk logged out.
+INFO 2019-03-17 12:23:22,995 general_elections.views.views_volunteer.volunteer_panel:98 - Volunteer: vampire reset token for beingtmk
+INFO 2019-03-17 12:23:31,424 general_elections.views.views_voter.voter_login:53 - Voter: beingtmk logged in
+INFO 2019-03-17 12:23:35,758 general_elections.views.views_voter.voter_logout:71 - Voter: beingtmk setting inactive. vote complete.
+INFO 2019-03-17 12:23:35,792 general_elections.views.views_voter.voter_logout:74 - Voter: beingtmk logged out.
