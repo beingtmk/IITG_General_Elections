@@ -3,3 +3,16 @@ INFO 2019-03-16 08:39:17,314 general_elections.views.views_admin.admin_webmail_l
 INFO 2019-03-16 08:39:55,586 general_elections.views.views_volunteer.volunteer_login:30 - Volunteer: login accessed
 INFO 2019-03-16 08:46:58,953 general_elections.views.views_admin.admin_webmail_login:49 - Admin: Unauthorised user attempt webmail_id credentials:beingtmk
 INFO 2019-03-16 08:47:09,947 general_elections.views.views_admin.admin_webmail_login:55 - Admin: election webmail_id credentials verified
+INFO 2019-03-17 08:54:02,979 general_elections.views.views_admin.voting_stats:205 - Admin: vampire requested voting stats
+INFO 2019-03-17 08:54:09,632 general_elections.views.views_admin.voter_list:154 - Admin: vampire requested voter list
+INFO 2019-03-17 09:00:32,317 general_elections.views.views_admin.voter_list:154 - Admin: vampire requested voter list
+INFO 2019-03-17 09:00:39,143 general_elections.views.views_admin.add_voter:255 - Admin: vampire requested voter addition form
+INFO 2019-03-17 09:01:13,012 general_elections.views.views_admin.add_voter:250 - Admin: vampire created new voter with webmail_id=beingtmk
+INFO 2019-03-17 09:01:14,377 general_elections.views.views_admin.voter_list:154 - Admin: vampire requested voter list
+INFO 2019-03-17 09:01:18,788 general_elections.views.views_admin.save_voter:236 - Admin: vampire requested voter update form
+INFO 2019-03-17 09:01:36,478 general_elections.views.views_admin.save_voter:236 - Admin: vampire requested voter update form
+INFO 2019-03-17 09:01:54,052 general_elections.views.views_admin.voter_list:154 - Admin: vampire requested voter list
+INFO 2019-03-17 09:01:58,456 general_elections.views.views_admin.voting_stats:205 - Admin: vampire requested voting stats
+INFO 2019-03-17 09:07:14,759 general_elections.views.views_volunteer.volunteer_panel:107 - Volunteer: vampire created token for beingtmk
+INFO 2019-03-17 09:07:43,102 general_elections.views.views_volunteer.volunteer_panel:75 - Volunteer: vampire attempt to create voter who is not in VoterList
+INFO 2019-03-17 09:07:47,597 general_elections.views.views_volunteer.volunteer_panel:94 - Volunteer: vampire reset token for beingtmk

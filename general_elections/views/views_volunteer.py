@@ -24,6 +24,10 @@ def is_admin(user):
 def is_volunteer(user):
 	return Volunteer.objects.filter(user=user).exists()
 
+def is_volunteer_or_admin(user):
+	return Volunteer.objects.filter(user=user).exists() or Admin.objects.filter(user=user).exists() 
+
+
 # Views
 def volunteer_login(request):
 	if request.method == "GET":
@@ -66,7 +70,7 @@ If User already exists and has voted, then error is displayed.
 If User already exists, but has not voted, the password is changed to the new token.
 """
 @login_required
-@user_passes_test(is_volunteer)
+@user_passes_test(is_volunteer_or_admin)
 def volunteer_panel(request):
 	if request.method == 'POST':
 		webmail_id = request.POST['webmail_id']
