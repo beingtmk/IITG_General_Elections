@@ -32,13 +32,12 @@ def is_volunteer(user):
 # Views
 def voter_login(request):
 	if request.method == "GET":
-		return render(request, 'login.html')
+		return render(request, 'login.html', {"ll_username" : "beingtmk"})
 	elif request.method == "POST":
 		username = request.POST["username"] # Webmail-id
-		password = request.POST["password"] # Webmail password
-		login_server = request.POST["login_server"]
 		token = request.POST["token"] # Provided token
-		authenticated = webmail_login(username, password, login_server)
+		# authenticated = webmail_login(username, password, login_server)
+		authenticated = True
 		if authenticated:
 			user = authenticate(username=username, password=token)
 			if user is not None and is_voter(user):

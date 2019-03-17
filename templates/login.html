@@ -34,19 +34,7 @@
   <div class="col-md-4 inputGroupContainer">
   <div class="input-group">
   <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-  <input name="username" placeholder="First Name" class="form-control"  type="text" value="{{ ll_username }}">{% csrf_token %}
-    </div>
-  </div>
-</div>
-
-<!-- Text input-->
-
-<div class="form-group">
-  <label class="col-md-4 control-label" >Password</label> 
-    <div class="col-md-4 inputGroupContainer">
-    <div class="input-group">
-  <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-  <input name="password" placeholder="Password" class="form-control"  type="password" value="{{ ll_password }}">{% csrf_token %}
+  <input name="username" placeholder="First Name" class="form-control"  type="text" value="{{ ll_username }}" readonly>{% csrf_token %}
     </div>
   </div>
 </div>
@@ -60,22 +48,6 @@
   <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
   <input name="token" placeholder="Passphrase" class="form-control"  type="text" value="{{ ll_password }}">{% csrf_token %}
     </div>
-  </div>
-</div>
-
-<div class="form-group"> 
-  <label class="col-md-4 control-label">Login Server</label>
-    <div class="col-md-4 selectContainer">
-    <div class="input-group">
-        <span class="input-group-addon"><i class="glyphicon glyphicon-list"></i></span>
-    <select name="login_server" class="form-control selectpicker" >
-      <option value="202.141.80.12" selected>Teesta</option>
-      <option value="202.141.80.9">Naambor</option>
-      <option value="202.141.80.10">Disang</option>
-      <option value="202.141.80.11">Tamdil</option>
-      <option value="202.141.80.13">Dikrong</option>
-      {% csrf_token %}
-    </select>
   </div>
 </div>
 </div>
