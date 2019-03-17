@@ -1,4 +1,5 @@
-from django.http import HttpResponse, HttpResponseRedirect
+from django.shortcuts import render, redirect, HttpResponse, HttpResponseRedirect, reverse
+
 from django.shortcuts import render
 from django.urls import reverse
 from authentication.authhelper import get_signin_url
@@ -25,6 +26,10 @@ def gettoken(request):
   access_token = token['access_token']
   user = get_me(access_token)
 
-  # Save the token in the session
+  # Save the data in session
   request.session['access_token'] = access_token
-  return HttpResponse('User: {0}, Access token: {1}'.format(user, access_token))
+  request.session['name'] = user['displayName']
+  request.session['roll_number'] = user['surname']
+  request.session['mail'] = user['mail']
+
+  return redirect('index')

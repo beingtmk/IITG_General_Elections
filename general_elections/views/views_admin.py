@@ -18,6 +18,8 @@ import pandas as pd
 from ..models import *
 from ..forms import VolunteerForm, VoterListForm, AddVoterForm, AddContestantForm
 from .api import webmail_login
+from authentication.authhelper import get_signin_url
+
 
 logger = logging.getLogger(__name__)
 
@@ -27,7 +29,17 @@ def is_admin(user):
 
 # Views
 def index(request):
-	return render(request, 'index.html')
+	redirect_uri = request.build_absolute_uri(
+		reverse('authentication:gettoken'))
+	context = {
+		'name' : request.session.get('name', None),
+		'roll_number' : request.session.get('roll_number', None),
+		'mail' : request.session.get('mail', None),
+		'access_token' : request.session.get('access_token', None),
+		'sign_in_url' : get_signin_url(redirect_uri)
+	}
+
+	return render(request, 'index.html', context)
 
 """
 Two stage login.

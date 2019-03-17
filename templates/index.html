@@ -22,8 +22,29 @@
 <div class="container well">
 
 
-<legend ><center>Outlook Authorization</center></legend>
+  {% if access_token %}
+  
+  <legend ><em>Your Details</em></legend>
+  <div class="ui message success">
+      <b>Name :</b> {{name}} <br>
+      <b>Roll Number :</b> {{roll_number}} <br>
+      <b>mail :</b> {{mail}} <br>
+    </div>
+    <a href='/login'>
+        <button class="ui primary button">Proceed to Vote</button>
+      </a>
+      
+  {% else%}
+  <center>
+    <legend >Outlook OAuth2.0</legend>
 
+    <p class="ui message info">You need to Authenticate yourself with Outlook before you can Proceed!</p>
+
+    <a href={{sign_in_url}}>
+      <button class="ui primary button">Log In with Outlook</button>
+    </a>
+  </center>
+    {% endif %}
 
 </div>
 </body>
