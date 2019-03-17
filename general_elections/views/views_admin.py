@@ -27,16 +27,41 @@ logger = logging.getLogger(__name__)
 def is_admin(user):
 	return Admin.objects.filter(user=user).exists()
 
+def is_volunteer(user):
+	return Volunteer.objects.filter(user=user).exists()
+
+def get_or_none(classmodel, **kwargs):
+	try:
+		return classmodel.objects.get(**kwargs)
+	except ObjectDoesNotExist:
+		return None
+
+
+
 # Views
 def index(request):
 	redirect_uri = request.build_absolute_uri(
 		reverse('authentication:gettoken'))
+		
+	mail = request.session.get('mail', None)
+
+	admin = False
+	volunteer = False
+
+	if(mail):
+		username = mail.split('@')[0]
+		user = get_or_none(User, username=username)
+		admin = is_admin(user)
+		volunteer = is_volunteer(user)
+
 	context = {
 		'name' : request.session.get('name', None),
 		'roll_number' : request.session.get('roll_number', None),
 		'mail' : request.session.get('mail', None),
 		'access_token' : request.session.get('access_token', None),
-		'sign_in_url' : get_signin_url(redirect_uri)
+		'sign_in_url' : get_signin_url(redirect_uri),
+		"is_admin" : admin,
+		"is_volunteer" : volunteer
 	}
 
 	return render(request, 'index.html', context)

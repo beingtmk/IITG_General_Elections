@@ -39,3 +39,4 @@ INFO 2019-03-17 12:23:22,995 general_elections.views.views_volunteer.volunteer_p
 INFO 2019-03-17 12:23:31,424 general_elections.views.views_voter.voter_login:53 - Voter: beingtmk logged in
 INFO 2019-03-17 12:23:35,758 general_elections.views.views_voter.voter_logout:71 - Voter: beingtmk setting inactive. vote complete.
 INFO 2019-03-17 12:23:35,792 general_elections.views.views_voter.voter_logout:74 - Voter: beingtmk logged out.
+INFO 2019-03-17 12:30:38,214 general_elections.views.views_volunteer.volunteer_login:34 - Volunteer: login accessed

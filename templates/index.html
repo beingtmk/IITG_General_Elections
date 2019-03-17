@@ -33,7 +33,20 @@
     <a href='login'>
         <button class="ui primary button">Proceed to Vote</button>
       </a>
+    
+    {% if is_volunteer %}
+      <a href='volunter_panel'>
+        <button class="ui secondary button">Proceed to Volunteer Panel</button>
+      </a>
+    
+    {% elif is_admin %}
+      <a href='admin_panel'>
+        <button class="ui secondary button">Proceed to Admin Panel</button>
+      </a>
+    
+    {% endif %}
       
+
   {% else%}
   <center>
     <legend >Outlook OAuth2.0</legend>
