@@ -134,6 +134,26 @@ def admin_personal_login(request):
 		err = 'Please login with the election webmail id first'
 		return render(request, 'admin_login.html', {'error': err})
 
+def admin_login_new(request):
+	if request.method == "GET":
+		if request.session.get('mail', None):
+			username = request.session.get('mail', None).split('@')[0]
+			return render(request, 'login.html', {"ll_username" : username})
+		else: return redirect('index')
+	elif request.method == "POST":
+		username = request.POST["username"] # Webmail-id
+		token = request.POST["token"] # Provided token
+		user = authenticate(username=username, password=token)
+		if user is not None and is_admin(user):
+			logger.info('Logging in Admin %s', personal_id)
+			login(request, user) # Login as django Admin user
+			return redirect('admin_panel')
+		else:
+			err = 'Invalid passphrase provided'
+			logger.info('Admin: %s invalid passphrase', personal_id)
+			return render(request, 'login.html', {'error': err})
+
+
 def admin_logout(request):
 	logger.info('Admin: %s logging out', request.user.username)
 	logout(request)

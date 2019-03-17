@@ -63,6 +63,26 @@ def get_or_none(classmodel, **kwargs):
 	except ObjectDoesNotExist:
 		return None
 
+def volunteer_login_new(request):
+	if request.method == "GET":
+		if request.session.get('mail', None):
+			username = request.session.get('mail', None).split('@')[0]
+			return render(request, 'login.html', {"ll_username" : username})
+		else: return redirect('index')
+	elif request.method == "POST":
+		username = request.POST["username"] # Webmail-id
+		token = request.POST["token"] # Provided token
+		user = authenticate(username=username, password=token)
+		if user is not None and is_volunteer(user):
+			logger.info('Volunteer: %s logging in', username)
+			login(request, user)
+			return redirect('volunteer_panel')
+		else:
+			err = 'Invalid username or token'
+			return render(request, 'login.html', {'error': err})
+
+
+
 """
 Generate a token for a voter present in the VoterList, and create a django User with username=webmail_id
 and password=token.

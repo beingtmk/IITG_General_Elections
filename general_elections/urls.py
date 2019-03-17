@@ -8,7 +8,7 @@ urlpatterns = [
 	url('^voting_start/$', (views.VoteWizard.as_view()), name='voting_start'),
 	url(r'^logout/$', views.voter_logout, name='logout'),
 	# ADMIN URLS
-	url(r'^admin_login/$', views.admin_webmail_login, name='admin_login'),
+	url(r'^admin_login/$', views.admin_login_new, name='admin_login'),
 	url(r'^admin_personal_login/$', views.admin_personal_login, name='admin_personal_login'),
 	url(r'^admin_panel/$', views.admin_panel, name='admin_panel'),
 	url(r'^create_volunteer/$', views.create_volunteer, name='create_volunteer'),
@@ -27,7 +27,7 @@ urlpatterns = [
 	url(r'^results_logout/$', views.results_logout, name='results_logout'),
 	url(r'^bulk_upload/$', views.bulk_upload, name='bulk_upload'),
 	# VOLUNTEER URLS
-	url(r'^volunteer_login/$', views.volunteer_login, name='volunteer_login'),
+	url(r'^volunteer_login/$', views.volunteer_login_new, name='volunteer_login'),
 	url(r'^volunteer_panel/$', views.volunteer_panel, name='volunteer_panel'),
 	url(r'^volunteer_logout/$', views.volunteer_logout, name='volunteer_logout'),
 ]
