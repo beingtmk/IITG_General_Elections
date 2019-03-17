@@ -18,7 +18,8 @@ from django.conf.urls import include, url
 from . import views
 
 urlpatterns = [
-    url(r'^$',views.siteindex,name="siteindex"),
-    url('general_elections/', include('general_elections.urls')),
+    # url(r'^$',views.siteindex,name="siteindex"),
+    url('', include('general_elections.urls')),
+    url(r'^authentication/', include('authentication.urls', namespace='authentication')),
     url('admin/', admin.site.urls),
 ]

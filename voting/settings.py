@@ -39,6 +39,8 @@ INSTALLED_APPS = [
 	'django.contrib.staticfiles',
 	'import_export',
 	'general_elections',
+	'authentication',
+
 ]
 
 RESTRICT_IPS = False

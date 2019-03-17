@@ -27,7 +27,7 @@ def is_admin(user):
 
 # Views
 def index(request):
-	return HttpResponse("index")
+	return render(request, 'index.html')
 
 """
 Two stage login.

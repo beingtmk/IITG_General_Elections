@@ -6,3 +6,4 @@ apscheduler
 psycopg2
 pandas
 django-import-export
+requests
