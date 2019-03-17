@@ -1,0 +1,59 @@
+<div class="ui grid" style="background-color:#008fff">
+<div class="three wide column" >
+  <center>
+  <h3 class="ui header" style="margin:10px">
+  <a href="/general_elections/logout/" style="color:black">
+  <i class="sign out icon"></i>
+  <div class="content">
+    Logout
+  </div>
+  </a>
+  </h2>
+  </center>
+</div>
+
+  <div class="ten wide column">
+  <center>
+<h2 class="ui header">
+  <img src="/static/images/iitglogo.png">
+  <div class="content">
+  Indian Institute Of Technology
+    <div class="sub header"><b> Student Gymkhana Elections 2018</b></div>
+    </div>
+    </h2></center>
+    </div>
+<div class="ui sticky">
+    <div class="three wide column">
+
+<div class="ui small statistics">
+ <div class="statistic">
+    <div class="value" >
+      <i class="clock icon"></i><label id="progressBar"></label>
+    </div>
+    <div class="label">
+      Seconds Remaining
+    </div>
+  </div>
+  </div>
+  </div>
+</div>
+</div>
+<script >
+	var timeleft = {{time_remaining}};
+var downloadTimer = setInterval(function(){
+  document.getElementById("progressBar").innerHTML = --timeleft;
+  if(timeleft == 15){
+    alert("You will be logged out soon");
+  }
+  if(timeleft <= 0){
+    alert("Time's up!");
+    window.location = "/general_elections/logout/";
+    clearInterval(downloadTimer);
+  }
+},1000);
+
+$('.ui.sticky')
+  .sticky()
+;
+
+</script>

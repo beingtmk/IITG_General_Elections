@@ -1,0 +1,32 @@
+
+===========Execute Manually==========================================================
+
+1.
+		sudo apt-get install python3-pip python3-dev libpq-dev postgresql postgresql-contrib
+		sudo -u postgres psql
+		CREATE DATABASE elections;
+		CREATE USER election_user WITH PASSWORD 'GGMU';
+		ALTER ROLE election_user SET client_encoding TO 'utf8';
+		ALTER ROLE election_user SET default_transaction_isolation TO 'read committed';
+		ALTER ROLE election_user SET timezone TO 'UTC';
+		GRANT ALL PRIVILEGES ON DATABASE elections TO election_user;
+		\q
+
+2. In settings.py 
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'elections',
+        'USER': 'election_user',
+        'PASSWORD': 'GGMU',
+        'HOST': 'localhost',
+        'PORT': '',
+    }
+}
+
+3. 
+	python manage.py makemigrations
+	python manage.py migrate
+	python manage.py runserver 127.0.0.1:8000
+
+

@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script
+  src="/static/js/jquery-3.1.1.min.js"
+  integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+  crossorigin="anonymous"></script>
+<script src="/static/semantic/dist/semantic.min.js"></script>
+<link rel="stylesheet" type="text/css" href="/static/semantic/dist/semantic.min.css">
+</head>
+
+<body>
+
+<div class="ui grid" style="background-color:#008fff">
+<div class="three wide column" >
+<center>
+  <h3 class="ui header" style="margin:10px">
+  <a href="/general_elections/volunteer_logout/" style="color:black">
+  <i class="sign out icon"></i>
+  <div class="content">
+    Logout
+  </div>
+  </a>
+  </h2>
+  </center>
+</div>
+
+  <div class="ten wide column">
+  <center>
+<h2 class="ui header">
+  <img src="/static/images/iitglogo.png">
+  <div class="content">
+  Indian Institute Of Technology
+    <div class="sub header"><b> Student Gymkhana Elections 2018</b></div>
+    </div>
+    </h2></center>
+    </div>
+    <div class="three wide column">
+  </div>
+</div>
+
+
+<br> <br> <br>
+<center>
+<h2 class="ui header">
+  <i class="circular users icon"></i>
+  <div class="content">
+    Volunteer Panel
+    <div class="sub header">Voter Token Generation</div>
+  </div>
+</h2>
+
+
+
+
+<form action="/general_elections/volunteer_panel/" method="post">
+<div class="ui form" >
+
+  
+  <div class="field" style="width:300px">
+       <label>Search with webmail id</label>
+      <input placeholder="Search with webmail_id " type="text" name="webmail_id">
+      {% csrf_token %}
+  </div>
+  <div class="field">
+
+  <button class="ui compact blue icon button">
+  <i class="search icon"> </i>Validate Voter
+</button>
+
+  </div>
+
+
+</div>
+</form>
+
+
+{% if voter %}
+<table class="ui collapsing celled definition table" style="margin:15px 15px 15px 15px">
+  <thead>
+    <tr>
+      
+      <th>Name</th>
+      <th>Roll Number</th>
+      <th>Webmail Id</th>
+      <th>Hostel</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      
+      <td>{{ voter.name }}</td>
+      <td>{{ voter.roll_no }}</td>
+      <td>{{ voter.webmail_id }}</td>
+      <td>{{ voter.hostel }}</td>
+    </tr>
+    
+  </tbody>
+</table>
+{% endif %}
+
+{% if msg %}
+<div class="ui green icon message" style="width:500px">
+  <i class="info circle icon"></i>
+  <div class="content">
+    <div class="header">
+      {{ msg }}
+    </div>
+  </div>
+</div>
+{% endif %}
+
+
+{% if error %}
+<div class="ui red icon message" style="width:500px"  >
+  <i class="exclamation circle icon"></i>
+  <div class="content">
+    <div class="header">
+      {{error}}
+    </div>
+  </div>
+</div>
+{% endif %}
+{% if voter %}
+<button  class = "ui blue labeled icon button">
+          
+          <i class="user icon"></i> Generate Token
+        </button>
+        {% endif %}
+</center>
+
+<!-- Here we insert the modal to show voter -->
+{% if token %}
+<div class="ui basic modal">
+ <div class="ui icon header">
+    <i class="user secret icon"></i>
+Token for '{{voter.webmail_id}}' is  &nbsp &nbsp <font color="red">{{token}}</font> 
+  </div>
+  <br><br>
+  <center>
+  <div class="actions">
+    <div class="ui green ok inverted button">
+      <i class="checkmark icon"></i>
+      OK
+    </div>
+  </div>
+  </center>
+</div>
+{% endif%}
+
+<script>
+
+$(".ui.blue.labeled.icon.button").on("click", function() {
+
+$('.ui.basic.modal')
+  .modal('show')
+;
+});
+
+
+</script>
+
+
+
+
+</body>

@@ -1,0 +1,5 @@
+INFO 2019-03-16 08:39:10,407 general_elections.views.views_admin.admin_webmail_login:49 - Admin: Unauthorised user attempt webmail_id credentials:beingtmk
+INFO 2019-03-16 08:39:17,314 general_elections.views.views_admin.admin_webmail_login:49 - Admin: Unauthorised user attempt webmail_id credentials:beingtmk
+INFO 2019-03-16 08:39:55,586 general_elections.views.views_volunteer.volunteer_login:30 - Volunteer: login accessed
+INFO 2019-03-16 08:46:58,953 general_elections.views.views_admin.admin_webmail_login:49 - Admin: Unauthorised user attempt webmail_id credentials:beingtmk
+INFO 2019-03-16 08:47:09,947 general_elections.views.views_admin.admin_webmail_login:55 - Admin: election webmail_id credentials verified

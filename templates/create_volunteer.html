@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script
+  src="/static/js/jquery-3.1.1.min.js"
+  integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+  crossorigin="anonymous"></script>
+<script src="/static/semantic/dist/semantic.min.js"></script>
+<link rel="stylesheet" type="text/css" href="/static/semantic/dist/semantic.min.css">
+</head>
+
+<body>
+	<div class="ui bottom attached segment pushable">
+	{% include "sidebar.html" %}
+
+		<div class="pusher" style="padding-left:50px; padding-top: 20px">
+      <h1 class="ui header"><i class="wpforms icon"></i>Create Volunteer</h1>
+			<div style="width:40%" >
+			<form class="ui form" style="margin:15px 15px 15px 15px" action = '/general_elections/create_volunteer/' method="post">
+				{% csrf_token %}
+            {{form}}
+            <input class = "ui right floated primary button"  style="margin:15px 0px 0px 0px"  type="submit" value="Create" />
+      </form>
+      </div>
+      </div>
+    </div>
+</body>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script
+  src="/static/js/jquery-3.1.1.min.js"
+  integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+  crossorigin="anonymous"></script>
+<script src="/static/semantic/dist/semantic.min.js"></script>
+<link rel="stylesheet" type="text/css" href="/static/semantic/dist/semantic.min.css">
+</head>
+
+<body>
+	<div class="ui bottom attached segment pushable">
+		{% include "sidebar.html" %}
+	 	<div class="pusher">
+	 		{% if form.errors %}
+	 		<div style="text-align: center;">
+     			<div style="width: 500px; margin: 0 auto;">
+     				<div class="ui negative message" style="width:70%">
+					  	<i class="close icon"></i>
+					  	<div class="header">Error</div>
+							{% for key,value in form.errors.items %} 
+							{{ value }}
+							{% endfor %}
+						</div>
+					</div>
+				</div>
+			{% elif msg %}
+		 	<div style="text-align: center;">
+	     		<div style="width: 500px; margin: 0 auto;">
+					<div class="ui success message" style="width:50%">
+					  <i class="close icon"></i>
+					  <div class="header">
+					  	{{msg}}
+					  </div>
+					</div>
+				</div>
+			</div>
+			{%else%}
+			<div style="text-align: center;">
+	     		<div style="width: 500px; margin: 0 auto;">
+					<div class="ui negative message" style="width:70%">
+					  <i class="close icon"></i>
+					  <div class="header">
+					  	{{err}}
+					  </div>
+					</div>
+				</div>
+			</div>
+			{%endif%}
+		</div>
+	</div>
+	<script>
+		function redirect(){
+			window.location.href = "{{url}}";
+		}
+		setTimeout(redirect, 1000);
+	</script>
+</body>

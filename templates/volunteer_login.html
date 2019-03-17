@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<link href="/static/css/bootstrap.min1.css" rel="stylesheet" id="bootstrap-css">
+<script src="/static/js/bootstrap.min1.js"></script>
+<script src="/static/js/jquery-1.11.1.min.js"></script>
+<link rel="stylesheet" href="login.css">
+<script src="login.js"> </script>
+<script
+  src="/static/js/jquery-3.1.1.min.js"
+  integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+  crossorigin="anonymous"></script>
+<script src="/static/semantic/dist/semantic.min.js"></script>
+<link rel="stylesheet" type="text/css" href="/static/semantic/dist/semantic.min.css">
+
+</head>
+
+<body>
+{% include "login_top.html" %}
+
+<div class="container">
+
+    <form class="well form-horizontal" action="/general_elections/volunteer_login/" method="post"  id="contact_form">
+<fieldset>
+
+<!-- Form Name -->
+<legend ><center>Volunteer Login</center></legend>
+
+<!-- Text input-->
+
+<div class="form-group">
+  <label class="col-md-4 control-label">UserName</label>  
+  <div class="col-md-4 inputGroupContainer">
+  <div class="input-group">
+  <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+  <input name="username" placeholder="Webmail_id" class="form-control"  type="text" value="{{ ll_username }}">{% csrf_token %}
+    </div>
+  </div>
+</div>
+
+<!-- Text input-->
+
+<div class="form-group">
+  <label class="col-md-4 control-label" >Password</label> 
+    <div class="col-md-4 inputGroupContainer">
+    <div class="input-group">
+  <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+  <input name="password" placeholder="Password" class="form-control"  type="password" value="{{ ll_password }}">{% csrf_token %}
+    </div>
+  </div>
+</div>
+
+<!-- Text input-->
+
+<div class="form-group">
+  <label class="col-md-4 control-label" >Passphrase</label> 
+    <div class="col-md-4 inputGroupContainer">
+    <div class="input-group">
+  <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+  <input name="token" placeholder="Passphrase" class="form-control"  type="text" value="{{ ll_password }}">{% csrf_token %}
+    </div>
+  </div>
+</div>
+
+<div class="form-group"> 
+  <label class="col-md-4 control-label">Login Server</label>
+    <div class="col-md-4 selectContainer">
+    <div class="input-group">
+        <span class="input-group-addon"><i class="glyphicon glyphicon-list"></i></span>
+    <select name="login_server" class="form-control selectpicker" >
+      <option value="202.141.80.12" selected>Teesta</option>
+      <option value="202.141.80.9">Naambor</option>
+      <option value="202.141.80.10">Disang</option>
+      <option value="202.141.80.11">Tamdil</option>
+      <option value="202.141.80.13">Dikrong</option>
+      {% csrf_token %}
+    </select>
+  </div>
+</div>
+</div>
+
+
+<!-- Success message -->
+{% if error %}
+<div class="alert alert-success" role="alert" id="success_message" style="color:red">{{ error }}</div>
+{% endif %}
+<!-- Button -->
+<div class="form-group">
+  <label class="col-md-4 control-label"></label>
+  <div class="col-md-4">
+    <button type="submit" class="btn btn-warning" >Submit<span class="glyphicon glyphicon-send"></span></button>
+  </div>
+</div>
+
+</fieldset>
+</form>
+</div>
+    </div><!-- /.container -->
+</body>

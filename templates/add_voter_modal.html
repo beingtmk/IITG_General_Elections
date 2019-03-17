@@ -1,0 +1,19 @@
+<div class="ui modal" id ="myEdit">
+  <i class="close icon"></i>
+  <div class="header">
+    Add Voter
+  </div>
+
+  <div style="width:95%" >
+    <form class = "ui equal width form" action = '/general_elections/add_voter/' method="post" style="margin:15px 15px 15px 15px">
+      <div class="description">
+        {% csrf_token %}
+        {{form}}
+         <a  href="/general_elections/voter_list/">
+          <div class="ui right floated black deny button" style="margin:15px 0px 15px 0px"> Cancel </div>
+        </a>
+        <input class = "ui right floated primary button" style="margin:15px 15px 15px 0px" type="submit" value="Create" />
+      </div>
+    </form>
+  </div>
+</div>

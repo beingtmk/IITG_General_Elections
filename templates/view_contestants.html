@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script
+  src="/static/js/jquery-3.1.1.min.js"
+  integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+  crossorigin="anonymous"></script>
+<script src="/static/semantic/dist/semantic.min.js"></script>
+<link rel="stylesheet" type="text/css" href="/static/semantic/dist/semantic.min.css">
+</head>
+
+<body>
+
+<div class="ui bottom attached segment pushable">
+
+{% include "sidebar.html" %}
+ <div class="pusher" style="padding-left:50px; padding-top: 20px">
+<h1 class="ui header"><i class="list alternate icon"></i>Contestant List</h1>
+
+<table class="ui collapsing celled definition table" style="margin:15px 15px 15px 15px">
+  <thead>
+    <tr>
+      
+      <th>Name</th>
+      <th>Webmail Id</th>
+      <th>Post</th>
+    </tr>
+  </thead>
+  <tbody>
+  	{% for contestant in contestants %}
+    <tr>
+      
+      <td>{{ contestant.name }}</td>
+      <td>{{ contestant.webmail_id }}</td>
+      <td>{{ contestant.post }}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+</div>
+</div>
+</body>

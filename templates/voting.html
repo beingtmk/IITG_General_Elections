@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script
+  src="/static/js/jquery-3.1.1.min.js"
+  integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+  crossorigin="anonymous"></script>
+<script src="/static/semantic/dist/semantic.min.js"></script>
+<link rel="stylesheet" type="text/css" href="/static/semantic/dist/semantic.min.css">
+<style>input[type="radio"] {
+transform: scale(1.5, 1.5); 
+-moz-transform: scale(1.5, 1.5); 
+-ms-transform: scale(1.5, 1.5); 
+-webkit-transform: scale(1.5, 1.5); 
+-o-transform: scale(1.5, 1.5); 
+}</style>
+</head>
+
+<body>
+{% include "top.html" %}
+{% load i18n %}
+{{ wizard.form.media }}
+<h5 class="ui center aligned icon header" style="text-transform:uppercase;">
+  
+  Step {{ wizard.steps.step1 }} of {{ wizard.steps.count }}<br>
+		{{post_name}}	
+
+</h5>	
+{% if target_count %}
+<h4 class="ui red center aligned icon header">
+You have to select {{target_count}} candidates
+</h4>
+{% endif %}
+<form action="" method="post">{% csrf_token %}
+<!-- <table> -->
+{{ wizard.management_form }}
+{% if wizard.form.forms %}
+    {{ wizard.form.management_form }}
+    {% for form in wizard.form.forms %}
+        {{ form }}
+    {% endfor %}
+{% else %}
+	<!-- {{wizard.form}} -->
+	 <center><table class="ui red collapsing celled table" align="center" style="margin:30px 50px 30px 50px;border-width:thick;font-size:110%" border="4">
+		<thead>
+			<tr>
+				<th>Vote</th>
+				<th>Image</th>
+				<th>Name</th>
+				<th>Post</th>
+				<th>Agenda</th>
+			</tr>
+		</thead>
+
+		<tbody>
+			{% for c in wizard.form.contestants.field.queryset %}
+			<tr>
+			<label for="id_{{wizard.steps.current}}-contestants_{{forloop.counter|add:"-1"}}">
+			 	<td>
+			  	<input type="radio" name = "{{wizard.steps.current}}-contestants" value="{{c.webmail_id}}" required id="id_{{wizard.steps.current}}-contestants_{{forloop.counter}}" />
+			  	</td>
+			  	<td><img src="/static/images/{{c.webmail_id}}.jpg" class="ui fluid image" style="width:120px;height:120px;"></td>
+			  	<td>{{c.name }}</td>
+			  	<td>{{c.post }}</td>
+			  	<td>
+					<ul>
+						<li>{{c.agenda1}}</li>
+						<li>{{c.agenda2}}</li>
+						<li>{{c.agenda3}}</li>
+					</ul>			     
+			  	</td>
+			</label>
+			</tr>
+			{% endfor %}	    
+		 </tbody>
+		<!-- <tfoot class="full-width">
+			<tr>
+			  <th></th>
+			  <th colspan="4">
+			  </th>
+			</tr>
+		</tfoot> -->
+	</table>
+	</center>
+
+{% endif %}
+<!-- </table> -->
+<center><button type="submit" value="{% trans "submit" %}"  class="ui green labeled icon button">  <i class="hand point up outline icon"></i>Submit</button>
+</center><br>
+<center>
+{% if wizard.steps.prev %}
+<button name="wizard_goto_step" type="submit" value="{{ wizard.steps.first }}" class="ui blue labeled icon button">  <i class="angle double left icon"></i>First Step</button>
+<button name="wizard_goto_step" type="submit" value="{{ wizard.steps.prev }}" class="ui teal labeled icon button">  <i class="angle left icon"></i>Previous Step</button>
+{% endif %}
+</center>
+</form>
+<script>
+
+</script>
+</body>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script
+  src="/static/js/jquery-3.1.1.min.js"
+  integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+  crossorigin="anonymous"></script>
+<script src="/static/semantic/dist/semantic.min.js"></script>
+<link rel="stylesheet" type="text/css" href="/static/semantic/dist/semantic.min.css">
+</head>
+
+<body>
+
+<div class="ui bottom attached segment pushable">
+
+{% include "sidebar.html" %}
+<div class="pusher" style="padding-left:50px; padding-top: 20px">
+<h1 class="ui header"><i class="chart line icon"></i>Statistics</h1>
+
+<div class="ui compact pointing menu">
+{%for key in stats %}
+  <a class="item" style="text-transform: uppercase;"  onclick="openCity(event, '{{key}}')">
+    {{key}}
+  </a>
+{%endfor%}
+
+</div>
+{%for key, value in stats.items %}
+<div class="ui segment 1" id="{{key}}" style="display:none">
+    <table class="ui collapsing celled definition table" >
+  <thead>
+    <tr>
+      <th style="text-transform: uppercase;">{{key}}</th>
+      <th>Total Voted</th>
+      <th>Total Voters</th>
+      <th>% Voted</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for i in value %}
+    <tr>
+      <td>{{i.cat}}</td>
+      <td>{{i.voted}}</td>
+      <td>{{i.voters}}</td>
+      <td>{{i.percentage}}</td>
+    </tr>
+    {%endfor%}
+  </tbody>
+  <tfoot class="full-width">
+    <tr>
+    </tr>
+  </tfoot>
+</table>
+</div>
+{%endfor%}
+
+<script>
+
+$(document).ready(function(){
+    $('.ui .item').on('click', function() {
+        $('.ui .item').removeClass('active');
+        $(this).addClass('active');
+    });             
+});
+
+
+function openCity(evt, filter) {
+    var i, tabcontent, tablinks;
+    tabcontent = document.getElementsByClassName("ui segment 1");
+    for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+    }
+    tablinks = document.getElementsByClassName("item");
+    for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace(" active", "");
+    }
+    document.getElementById(filter).style.display = "block";
+    evt.currentTarget.className += " active";
+}
+</script>
+</body>

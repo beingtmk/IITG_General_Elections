@@ -1,0 +1,22 @@
+<div class="ui modal" id ="myEdit">
+  <i class="close icon"></i>
+  <div class="header">
+      Showing details for <p style = "color : red" >{{voter.webmail_id}}</p>
+  </div>
+
+  <div style="width:95%" >
+  <form class = "ui equal width form" action = '/general_elections/save_voter/' method="post"  style="margin:15px 15px 15px 15px" >
+    <div class="description">
+      {% csrf_token %}
+      {{form}}
+       <a  href="/general_elections/voter_list/">
+        <div class="ui right floated black deny button"  style="margin:15px 0px 15px 0px"> Cancel </div>
+      </a>
+      <input class = "ui right floated primary button"  style="margin:15px 15px 15px 0px" type="submit" value="Save" />
+    </div>
+    <a href = "{% url 'delete_voter' webmail_id=voter.webmail_id%}">
+      <div class="negative ui button"  style="margin:15px 0px 0px 0px" >Delete</div>
+    </a>
+  </form>
+  </div>
+</div>

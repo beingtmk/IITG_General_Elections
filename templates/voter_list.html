@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script
+  src="/static/js/jquery-3.1.1.min.js"
+  integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+  crossorigin="anonymous"></script>
+<script src="/static/semantic/dist/semantic.min.js"></script>
+<link rel="stylesheet" type="text/css" href="/static/semantic/dist/semantic.min.css">
+</head>
+
+<body>
+
+<div class="ui bottom attached segment pushable">
+
+{% include "sidebar.html" %}
+ <div class="pusher" style="padding-left:50px; padding-top: 20px">
+<h1 class="ui header"><i class="list alternate icon"></i>Voter List</h1>
+
+<form action="/general_elections/voter_list">
+<div class="ui form" >
+<div class="fields">
+  <div class=" three wide field" >
+      <label>Hostel_name</label>
+      <div class="ui mini selection dropdown">
+          <input name="hostel" type="hidden">
+          <i class="dropdown icon"></i>
+          <div class="default text">{{ hostel }}</div>
+          <div class="menu">
+              {% for v in hostel_list %}
+              <div class="item" data-value="{{v.hostel}}">{{v.hostel}}</div>
+              {%endfor%}
+          </div>
+      </div>
+  </div>
+
+  <div class="three wide field">
+      <label>Gender</label>
+      <div class="ui selection dropdown">
+          <input name="gender" type="hidden">
+          <i class="dropdown icon"></i>
+          <div class="default text">{{ gender }}</div>
+          <div class="menu">
+              <div class="item" data-value="M">Male</div>
+              <div class="item" data-value="F">Female</div>
+          </div>
+      </div>
+  </div>
+
+  <div class="three wide field">
+      <label>Program</label>
+      <div class="ui selection dropdown">
+          <input name="program" type="hidden">
+          <i class="dropdown icon"></i>
+          <div class="default text">Program</div>
+          <div class="menu">
+              <div class="item" data-value="UG">Under-Graduate</div>
+              <div class="item" data-value="PG">Post-Graduate</div>
+          </div>
+      </div>
+  </div>
+
+
+  <div class="field">
+       <label>Search with roll number</label>
+      <input placeholder="Search with roll number " type="text" name="roll_no">
+  </div>
+  <div class="field">
+  <label>Search</label>
+
+  <button class="ui compact blue icon button">
+  <i class="search icon"></i>
+</button>
+  </div>
+</div>
+</div>
+</form>
+
+
+<table class="ui collapsing celled definition table" style="margin:15px 15px 15px 15px">
+  <thead>
+    <tr>
+      
+      <th>Name</th>
+      <th>Roll Number</th>
+      <th>Webmail Id</th>
+      <th>Hostel</th>
+      <th>View/Edit/Delete</th>
+    </tr>
+  </thead>
+  <tbody>
+  	{% for voter in voters %}
+    <tr>
+      
+      <td>{{ voter.name }}</td>
+      <td>{{ voter.roll_no }}</td>
+      <td>{{ voter.webmail_id }}</td>
+      <td>{{ voter.hostel }}</td>
+      <td class="collapsing">
+        <div class="ui icon buttons">
+          {% if voter.webmail_id != '' %}
+            <button  class = "ui vertical animated button" data-url="{% url 'show_voter' webmail_id=voter.webmail_id %}"><div class="hidden content">Edit</div>
+  <div class="visible content"><i class="id card outline icon"></i></div></button>
+  {%endif%}
+</div>
+      </td>
+    </tr>
+    {% endfor %}
+  </tbody>
+  <tfoot class="full-width">
+    <tr>
+      <th></th>
+      <th colspan="4">
+          <button  class = "ui blue labeled icon button" data-url="{% url 'add_voter' %}">
+          
+          <i class="user icon"></i> Add Voter
+        </button>
+        <div class="ui pagination menu">
+
+
+  {% if voters.has_previous %}
+  <a class="active item" href="?page={{ voters.previous_page_number }}">
+    {{voters.previous_page_number}}
+  </a>
+  {%endif%}
+  <a class="active item">
+    {{voters.number}}
+  </a>
+
+  {% if voters.has_next %}
+  <a class="active item" href="?page={{ voters.next_page_number }}">
+    {{voters.next_page_number}}
+  </a>
+  {%endif%}
+
+
+</div>
+      </th>
+    </tr>
+  </tfoot>
+</table>
+{% if msg %}
+<div class="ui compact negative message">
+  
+  <div class="header">
+    {{msg}}  
+  </div>
+  </div>
+{%endif%}
+</div>
+</div>
+  </div>
+
+</div>
+
+<!-- Here we insert the modal to show voter -->
+<div class="modal-div" id="modal-div"> </div>
+
+
+<script>
+	var modalDiv = $("#modal-div");
+
+$(".ui.vertical.animated.button").on("click", function() {
+  $.ajax({
+    url: $(this).attr("data-url"),
+    success: function(data) {
+      // $('#modal-div').find('.modal-div').html(data);
+    modalDiv.html(data)
+    $("#myEdit").modal('show');
+    }
+  });
+});
+
+$(".ui.labeled.icon.button").on("click", function() {
+  $.ajax({
+    url: $(this).attr("data-url"),
+    success: function(data) {
+    modalDiv.html(data)
+    $("#myEdit").modal('show');
+    }
+  });
+});
+
+$('.ui.dropdown')
+  .dropdown()
+;
+
+</script>
+</body>

@@ -1,0 +1,10 @@
+2019-03-17 14:01:52.970 IST [6430] LOG:  listening on IPv4 address "127.0.0.1", port 5432
+2019-03-17 14:01:52.970 IST [6430] LOG:  could not bind IPv4 address "127.0.0.1": Address already in use
+2019-03-17 14:01:52.970 IST [6430] HINT:  Is another postmaster already running on port 5432? If not, wait a few seconds and retry.
+2019-03-17 14:01:53.036 IST [6430] LOG:  listening on Unix socket "/tmp/.s.PGSQL.5432"
+2019-03-17 14:01:53.863 IST [6455] LOG:  database system was interrupted; last known up at 2019-03-16 14:23:25 IST
+2019-03-17 14:01:54.252 IST [6455] LOG:  database system was not properly shut down; automatic recovery in progress
+2019-03-17 14:01:54.294 IST [6455] LOG:  redo starts at 0/17B6C20
+2019-03-17 14:01:54.294 IST [6455] LOG:  invalid record length at 0/17B6D00: wanted 24, got 0
+2019-03-17 14:01:54.294 IST [6455] LOG:  redo done at 0/17B6CC8
+2019-03-17 14:01:54.547 IST [6430] LOG:  database system is ready to accept connections

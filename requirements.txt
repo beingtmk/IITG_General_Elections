@@ -1,0 +1,8 @@
+django==2.0.2
+django-formtools
+bcrypt
+django-ip-restriction
+apscheduler
+psycopg2
+pandas
+django-import-export
