@@ -32,4 +32,4 @@ def gettoken(request):
   request.session['roll_number'] = user['surname']
   request.session['mail'] = user['mail']
 
-  return redirect('index')
+  return HttpResponseRedirect(request.META.get('HTTP_REFERER'))

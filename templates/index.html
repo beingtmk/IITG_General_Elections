@@ -34,16 +34,16 @@
         <button class="ui primary button">Proceed to Vote</button>
       </a>
     
+      {% if is_admin %}
+        <a href='admin_login'>
+          <button class="ui secondary button basic right floated">Proceed to Admin Panel</button>
+        </a>
+      
+      {% endif %}
     {% if is_volunteer %}
       <a href='volunteer_login'>
-        <button class="ui secondary button">Proceed to Volunteer Panel</button>
+        <button class="ui primary button basic right floated">Proceed to Volunteer Panel</button>
       </a>
-    
-    {% elif is_admin %}
-      <a href='admin_login'>
-        <button class="ui secondary button">Proceed to Admin Panel</button>
-      </a>
-    
     {% endif %}
       
 

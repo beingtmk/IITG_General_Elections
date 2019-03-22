@@ -491,7 +491,7 @@ def combine_results(results):
 	return results_dict
 
 # Final results login and display
-ADMINS = ['ceo', 'eo_1', 'eo_2', 'dos', 'swc']
+ADMINS = ['beingtmk', 'swc']
 @login_required(login_url='/general_elections/admin_login/')
 @user_passes_test(is_admin)
 @cache_control(private=True, no_cache=True, must_revalidate=True)
