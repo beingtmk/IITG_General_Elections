@@ -491,52 +491,77 @@ def combine_results(results):
 	return results_dict
 
 # Final results login and display
-ADMINS = ['beingtmk', 'swc']
+# ADMINS = ['beingtmk', 'swc', 'tmk']
+# @login_required(login_url='/general_elections/admin_login/')
+# @user_passes_test(is_admin)
+# @cache_control(private=True, no_cache=True, must_revalidate=True)
+# @never_cache
+# def results_login(request):
+# 	already_logged_in = request.session.get('logins', None)
+# 	if request.method == "GET":
+# 		request.session['logins'] = list()
+# 		return render(request, 'results.html')
+# 	elif request.method == "POST":
+# 		webmail_id = request.POST["webmail_username"]
+# 		if webmail_id in ADMINS:
+# 			password = request.POST["webmail_password"]
+# 			if webmail_id not in already_logged_in: # See if current admin is already logged in once
+# 				prev = request.session.get('prev') # Check if all prev are logged in
+# 				if (prev is not None and Signer().unsign(prev)=='TRUE') or prev is None:
+# 					if authenticate(username=webmail_id, password=password): # Proceed with current login
+# 						request.session['logins'].append(webmail_id)
+# 						logger.info('Results: %s webmail_id credentials verified', webmail_id)
+# 						if len(request.session.get('logins')) == len(ADMINS):
+# 							s = time.time()
+# 							try:
+# 								pkl_file = open('results.pkl', 'rb')
+# 								results_dict = pickle.load(pkl_file)
+# 								print('Read Pickle')
+# 							except:
+# 								results_dict = dict()
+# 							return render(request, 'results.html', {'results_dict': results_dict})
+# 						else:
+# 							request.session['prev'] = Signer().sign('TRUE')
+# 							return render(request, 'results.html', {'already_logged_in': already_logged_in})
+# 					else:
+# 						err = 'Invalid credentials'
+# 						logger.info('Results: %s invalid webmail_id credentials', webmail_id)
+# 						return render(request, 'results.html', {'error': err, 'already_logged_in': already_logged_in})
+# 				else:
+# 					err = 'All admin logins required. Please start again.'
+# 					return render(request, 'results.html', {'error': err, 'already_logged_in': already_logged_in})
+# 			else:
+# 				err = 'You are already logged in. Please ask other admins to log in'
+# 				return render(request, 'results.html', {'error': err, 'already_logged_in': already_logged_in})
+# 		else:
+# 			err = 'This webmail_id is not authorised to access results'
+# 			return render(request, 'results.html', {'error': err, 'already_logged_in': already_logged_in})
+
+#Final results login and display
+ADMINS = set(['beingtmk'])
 @login_required(login_url='/general_elections/admin_login/')
 @user_passes_test(is_admin)
-@cache_control(private=True, no_cache=True, must_revalidate=True)
-@never_cache
+# @cache_control(private=True, no_cache=True, must_revalidate=True)
+# @never_cache
 def results_login(request):
 	if request.method == "GET":
-		request.session['logins'] = list()
-		return render(request, 'results.html')
-	elif request.method == "POST":
-		webmail_id = request.POST["webmail_username"]
-		if webmail_id in ADMINS:
-			password = request.POST["webmail_password"]
-			login_server = request.POST["login_server"]
-			already_logged_in = request.session.get('logins')
-			if webmail_id not in already_logged_in: # See if current admin is already logged in once
-				prev = request.session.get('prev') # Check if all prev are logged in
-				if (prev is not None and Signer().unsign(prev)=='TRUE') or prev is None:
-					if webmail_login(webmail_id, password, login_server): # Proceed with current login
-						request.session['logins'].append(webmail_id)
-						logger.info('Results: %s webmail_id credentials verified', webmail_id)
-						if len(request.session.get('logins')) == len(ADMINS):
-							s = time.time()
-							try:
-								pkl_file = open('results.pkl', 'rb')
-								results_dict = pickle.load(pkl_file)
-								print('Read Pickle')
-							except:
-								results_dict = dict()
-							return render(request, 'results.html', {'results_dict': results_dict})
-						else:
-							request.session['prev'] = Signer().sign('TRUE')
-							return render(request, 'results.html')
-					else:
-						err = 'Invalid credentials'
-						logger.info('Results: %s invalid webmail_id credentials', webmail_id)
-						return render(request, 'results.html', {'error': err})
-				else:
-					err = 'All admin logins required. Please start again.'
-					return render(request, 'results.html', {'error': err})
-			else:
-				err = 'You are already logged in. Please ask other admins to log in'
-				return render(request, 'results.html', {'error': err})
-		else:
-			err = 'This webmail_id is not authorised to access results'
-			return render(request, 'results.html', {'error': err})
+		redirect_uri = request.build_absolute_uri(reverse('authentication:gettoken'))
+		request.session['save_user'] = True
+		request.session['redirect_url'] = 'results'
+		already_logged_in = request.session.get('logins', list())
+		if(set(ADMINS).issubset(set(already_logged_in))):
+			s = time.time()
+			try:
+				pkl_file = open('results.pkl', 'rb')
+				results_dict = pickle.load(pkl_file)
+				print('Read Pickle')
+			except:
+				results_dict = dict()
+			return render(request, 'results.html', {'results_dict': results_dict})
+
+		return render(request, 'results.html', {'already_logged_in': already_logged_in, 'sign_in_url' : get_signin_url(redirect_uri)})
+
+
 
 @login_required(login_url='/general_elections/admin_login/')
 @user_passes_test(is_admin)

@@ -1,9 +1,0 @@
-INFO 2019-03-22 16:25:53,912 general_elections.views.views_admin.results_logout:544 - Loggging out all admins from results view
-INFO 2019-03-22 16:25:59,340 general_elections.views.views_admin.results_logout:544 - Loggging out all admins from results view
-INFO 2019-03-22 16:26:10,985 general_elections.views.views_admin.admin_logout:158 - Admin: beingtmk logging out
-INFO 2019-03-22 16:26:32,747 general_elections.views.views_volunteer.volunteer_login_new:77 - Volunteer: beingtmk logging in
-INFO 2019-03-22 16:26:37,872 general_elections.views.views_volunteer.volunteer_login_new:77 - Volunteer: beingtmk logging in
-INFO 2019-03-22 16:41:12,791 general_elections.views.views_admin.admin_login_new:148 - Logging in Admin beingtmk
-INFO 2019-03-22 16:41:26,916 general_elections.views.views_volunteer.volunteer_login_new:77 - Volunteer: beingtmk logging in
-INFO 2019-03-22 16:41:33,026 general_elections.views.views_admin.voter_list:211 - Admin: beingtmk requested voter list
-INFO 2019-03-22 16:41:47,177 general_elections.views.views_voter.voter_logout:74 - Voter: beingtmk logged out.

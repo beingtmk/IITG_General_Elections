@@ -45,7 +45,6 @@
   </div>
 </div>
 <br><br><br>
-
 {% if results_dict %}
 <center>
 <h1 class="ui header"><i class="chart line icon"></i>Results</h1>
@@ -84,56 +83,29 @@
 {%endfor%}
 </center>
 {%else%}
-<div class="container">
+<div class="container well">
+    <center>
+        <legend >Outlook OAuth2.0</legend>
+    
+        <p class="ui message info">You need to Authenticate yourself with Outlook before you can Proceed!</p>
+    
+        <a href={{sign_in_url}}>
+          <button class="ui primary button">Log In with Outlook</button>
+        </a>
+      </center>
 
-    <form class="well form-horizontal" action="/general_elections/results/" method="post"  id="contact_form">
-<fieldset>
+</div><!-- /.container -->
+{%endif%}
 
-<!-- Form Name -->
-<legend><center>Results Login</center></legend>
-
-<!-- Text input-->
-
-<div class="form-group">
-  <label class="col-md-4 control-label">UserName</label>
-  <div class="col-md-4 inputGroupContainer">
-  <div class="input-group">
-  <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-  <input name="webmail_username" placeholder="Webmail_id" class="form-control"  type="text" value="{{ ll_username }}">{% csrf_token %}
-    </div>
-  </div>
-</div>
-
-<!-- Text input-->
-
-<div class="form-group">
-  <label class="col-md-4 control-label" >Password</label>
-    <div class="col-md-4 inputGroupContainer">
-    <div class="input-group">
-  <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-  <input name="webmail_password" placeholder="Password" class="form-control"  type="password" value="{{ ll_password }}">{% csrf_token %}
-    </div>
-  </div>
-</div>
-
-<!-- Success message -->
-{% if error %}
-<div class="alert alert-success" role="alert" id="success_message" style="color:red">{{ error }}</div>
-{% endif %}
-
-<!-- Button -->
-<div class="form-group">
-  <label class="col-md-4 control-label"></label>
-  <div class="col-md-4">
-    <button type="submit" class="btn btn-warning" >Submit<span class="glyphicon glyphicon-send"></span></button>
-  </div>
-</div>
-
-</fieldset>
-</form>
-</div>
-    </div><!-- /.container -->
-    {%endif%}
+  {% if already_logged_in %}
+  <center>
+    <b>Already Logged In:</b>
+    {% for user in already_logged_in %}
+          {{user}} ,
+    {% endfor %}
+  </center>
+  <br><br>
+  {% endif %}
 
 <script>
 

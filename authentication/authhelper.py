@@ -33,7 +33,8 @@ def get_signin_url(redirect_uri):
     params = {'client_id': client_id,
               'redirect_uri': redirect_uri,
               'response_type': 'code',
-              'scope': ' '.join(str(i) for i in scopes)
+              'scope': ' '.join(str(i) for i in scopes),
+              'prompt': 'login'
               }
 
     signin_url = authorize_url.format(urlencode(params))
@@ -66,7 +67,7 @@ def get_token_from_refresh_token(refresh_token, redirect_uri):
                  'redirect_uri': redirect_uri,
                  'scope': ' '.join(str(i) for i in scopes),
                  'client_id': client_id,
-                 'client_secret': client_secret
+                 'client_secret': client_secret,
                  }
 
     r = requests.post(token_url, data=post_data)
