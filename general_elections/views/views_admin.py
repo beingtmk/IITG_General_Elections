@@ -538,7 +538,7 @@ def combine_results(results):
 # 			return render(request, 'results.html', {'error': err, 'already_logged_in': already_logged_in})
 
 #Final results login and display
-ADMINS = set(['swc', 'dosa', 'elections', 'm.dave'])
+ADMINS = set(['swc', 'dos', 'elections', 'm.dave'])
 @login_required(login_url='/general_elections/admin_login/')
 @user_passes_test(is_admin)
 # @cache_control(private=True, no_cache=True, must_revalidate=True)
