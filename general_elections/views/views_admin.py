@@ -135,29 +135,29 @@ def admin_personal_login(request):
 		return render(request, 'admin_login.html', {'error': err})
 
 def admin_login_new(request):
+	username = request.session.get('mail', None).split('@')[0]
 	if request.method == "GET":
 		if request.session.get('mail', None):
-			username = request.session.get('mail', None).split('@')[0]
-			return render(request, 'login.html', {"ll_username" : username})
+			return render(request, 'admin_login.html', {"ll_username" : username})
 		else: return redirect('index')
 	elif request.method == "POST":
 		username = request.POST["username"] # Webmail-id
 		token = request.POST["token"] # Provided token
 		user = authenticate(username=username, password=token)
 		if user is not None and is_admin(user):
-			logger.info('Logging in Admin %s', personal_id)
+			logger.info('Logging in Admin %s', username)
 			login(request, user) # Login as django Admin user
 			return redirect('admin_panel')
 		else:
 			err = 'Invalid passphrase provided'
-			logger.info('Admin: %s invalid passphrase', personal_id)
-			return render(request, 'login.html', {'error': err})
+			logger.info('Admin: %s invalid passphrase', username)
+			return render(request, 'admin_login.html', {'error': err})
 
 
 def admin_logout(request):
 	logger.info('Admin: %s logging out', request.user.username)
 	logout(request)
-	return redirect('admin_login')
+	return redirect('index')
 
 @login_required(login_url='/general_elections/admin_login/')
 @user_passes_test(is_admin)
@@ -241,9 +241,9 @@ def voter_list(request):
 def create_stats_list(voters_stats, voted_stats):
 	result = list()
 	for i in voters_stats:
-		row = i;
+		row = i
 		# If field is not present in voted_stats then voted = 0 for that field
-		row['voted'] = 0;
+		row['voted'] = 0
 		for j in voted_stats:
 			if j['cat'] == i['cat']:
 				row['voted'] = j['voted']

@@ -67,7 +67,7 @@ def volunteer_login_new(request):
 	if request.method == "GET":
 		if request.session.get('mail', None):
 			username = request.session.get('mail', None).split('@')[0]
-			return render(request, 'login.html', {"ll_username" : username})
+			return render(request, 'volunteer_login.html', {"ll_username" : username})
 		else: return redirect('index')
 	elif request.method == "POST":
 		username = request.POST["username"] # Webmail-id
@@ -79,7 +79,7 @@ def volunteer_login_new(request):
 			return redirect('volunteer_panel')
 		else:
 			err = 'Invalid username or token'
-			return render(request, 'login.html', {'error': err})
+			return render(request, 'volunteer_login.html', {'error': err})
 
 
 

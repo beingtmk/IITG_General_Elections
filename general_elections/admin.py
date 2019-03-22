@@ -32,4 +32,5 @@ class ContestantsAdmin(ImportExportModelAdmin):
 
 admin.site.register(Contestants, ContestantsAdmin)
 admin.site.register(Admin)
+admin.site.register(Volunteer)
 
