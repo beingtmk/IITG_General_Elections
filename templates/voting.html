@@ -1,4 +1,6 @@
 <!DOCTYPE html>
+{% load static %}
+
 <html>
 <head>
 <script
@@ -59,7 +61,7 @@ You have to select {{target_count}} candidates
 			 	<td>
 			  	<input type="radio" name = "{{wizard.steps.current}}-contestants" value="{{c.webmail_id}}" required id="id_{{wizard.steps.current}}-contestants_{{forloop.counter}}" />
 			  	</td>
-			  	<td><img src="{% static 'images/{{c.webmail_id}}.jpg" class="ui fluid image" style="width:120px;height:120px;"></td>
+			  	<td><img src="{% static 'images/{{c.webmail_id}}.jpg' %}" class="ui fluid image" style="width:120px;height:120px;"></td>
 			  	<td>{{c.name }}</td>
 			  	<td>{{c.post }}</td>
 			  	<td>
