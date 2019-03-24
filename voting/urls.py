@@ -20,6 +20,6 @@ from . import views
 urlpatterns = [
     # url(r'^$',views.siteindex,name="siteindex"),
     url('general_elections/', include('general_elections.urls')),
-    url(r'^authentication/', include('authentication.urls', namespace='authentication')),
+    url('general_elections/authentication/', include('authentication.urls', namespace='authentication')),
     url('general_elections/admin/', admin.site.urls),
 ]

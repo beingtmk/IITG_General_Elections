@@ -6365,3 +6365,559 @@ django.template.base.VariableDoesNotExist: Failed lookup for key [name] in <URLR
 WARNING 2019-03-24 10:24:42,614 django.request.get_response:93 - Not Found: /general_elections/login.js
 WARNING 2019-03-24 10:24:42,615 django.request.get_response:93 - Not Found: /general_elections/login.css
 >>>>>>> Stashed changes
+DEBUG 2019-03-24 10:49:04,018 django.db.backends.execute:111 - (0.003) 
+            SELECT c.relname, c.relkind
+            FROM pg_catalog.pg_class c
+            LEFT JOIN pg_catalog.pg_namespace n ON n.oid = c.relnamespace
+            WHERE c.relkind IN ('r', 'v')
+                AND n.nspname NOT IN ('pg_catalog', 'pg_toast')
+                AND pg_catalog.pg_table_is_visible(c.oid); args=None
+DEBUG 2019-03-24 10:49:04,020 django.db.backends.execute:111 - (0.001) SELECT "django_migrations"."app", "django_migrations"."name" FROM "django_migrations"; args=()
+DEBUG 2019-03-24 10:49:04,021 django.db.backends.execute:111 - (0.001) 
+            SELECT c.relname, c.relkind
+            FROM pg_catalog.pg_class c
+            LEFT JOIN pg_catalog.pg_namespace n ON n.oid = c.relnamespace
+            WHERE c.relkind IN ('r', 'v')
+                AND n.nspname NOT IN ('pg_catalog', 'pg_toast')
+                AND pg_catalog.pg_table_is_visible(c.oid); args=None
+DEBUG 2019-03-24 10:49:04,022 django.db.backends.execute:111 - (0.000) SELECT "django_migrations"."app", "django_migrations"."name" FROM "django_migrations"; args=()
+DEBUG 2019-03-24 10:49:04,071 django.db.backends.execute:111 - (0.001) 
+            SELECT c.relname, c.relkind
+            FROM pg_catalog.pg_class c
+            LEFT JOIN pg_catalog.pg_namespace n ON n.oid = c.relnamespace
+            WHERE c.relkind IN ('r', 'v')
+                AND n.nspname NOT IN ('pg_catalog', 'pg_toast')
+                AND pg_catalog.pg_table_is_visible(c.oid); args=None
+DEBUG 2019-03-24 10:49:04,073 django.db.backends.execute:111 - (0.001) 
+            SELECT c.relname, c.relkind
+            FROM pg_catalog.pg_class c
+            LEFT JOIN pg_catalog.pg_namespace n ON n.oid = c.relnamespace
+            WHERE c.relkind IN ('r', 'v')
+                AND n.nspname NOT IN ('pg_catalog', 'pg_toast')
+                AND pg_catalog.pg_table_is_visible(c.oid); args=None
+DEBUG 2019-03-24 10:49:04,073 django.db.backends.execute:111 - (0.000) SELECT "django_migrations"."app", "django_migrations"."name" FROM "django_migrations"; args=()
+DEBUG 2019-03-24 10:49:04,075 django.db.backends.execute:111 - (0.001) SELECT "django_content_type"."id", "django_content_type"."app_label", "django_content_type"."model" FROM "django_content_type" WHERE ("django_content_type"."model" = 'logentry' AND "django_content_type"."app_label" = 'admin'); args=('logentry', 'admin')
+DEBUG 2019-03-24 10:49:04,078 django.db.backends.execute:111 - (0.001) SELECT "auth_permission"."content_type_id", "auth_permission"."codename" FROM "auth_permission" INNER JOIN "django_content_type" ON ("auth_permission"."content_type_id" = "django_content_type"."id") WHERE "auth_permission"."content_type_id" IN (1) ORDER BY "django_content_type"."app_label" ASC, "django_content_type"."model" ASC, "auth_permission"."codename" ASC; args=(1,)
+DEBUG 2019-03-24 10:49:04,079 django.db.backends.execute:111 - (0.000) SELECT "django_content_type"."id", "django_content_type"."app_label", "django_content_type"."model" FROM "django_content_type" WHERE "django_content_type"."app_label" = 'admin'; args=('admin',)
+DEBUG 2019-03-24 10:49:04,080 django.db.backends.execute:111 - (0.000) SELECT "django_content_type"."id", "django_content_type"."app_label", "django_content_type"."model" FROM "django_content_type" WHERE ("django_content_type"."model" = 'user' AND "django_content_type"."app_label" = 'auth'); args=('user', 'auth')
+DEBUG 2019-03-24 10:49:04,081 django.db.backends.execute:111 - (0.000) SELECT "django_content_type"."id", "django_content_type"."app_label", "django_content_type"."model" FROM "django_content_type" WHERE ("django_content_type"."model" = 'permission' AND "django_content_type"."app_label" = 'auth'); args=('permission', 'auth')
+DEBUG 2019-03-24 10:49:04,082 django.db.backends.execute:111 - (0.000) SELECT "django_content_type"."id", "django_content_type"."app_label", "django_content_type"."model" FROM "django_content_type" WHERE ("django_content_type"."model" = 'group' AND "django_content_type"."app_label" = 'auth'); args=('group', 'auth')
+DEBUG 2019-03-24 10:49:04,084 django.db.backends.execute:111 - (0.001) SELECT "auth_permission"."content_type_id", "auth_permission"."codename" FROM "auth_permission" INNER JOIN "django_content_type" ON ("auth_permission"."content_type_id" = "django_content_type"."id") WHERE "auth_permission"."content_type_id" IN (2, 3, 4) ORDER BY "django_content_type"."app_label" ASC, "django_content_type"."model" ASC, "auth_permission"."codename" ASC; args=(2, 3, 4)
+DEBUG 2019-03-24 10:49:04,085 django.db.backends.execute:111 - (0.000) SELECT "django_content_type"."id", "django_content_type"."app_label", "django_content_type"."model" FROM "django_content_type" WHERE "django_content_type"."app_label" = 'auth'; args=('auth',)
+DEBUG 2019-03-24 10:49:04,086 django.db.backends.execute:111 - (0.000) SELECT "django_content_type"."id", "django_content_type"."app_label", "django_content_type"."model" FROM "django_content_type" WHERE ("django_content_type"."model" = 'contenttype' AND "django_content_type"."app_label" = 'contenttypes'); args=('contenttype', 'contenttypes')
+DEBUG 2019-03-24 10:49:04,087 django.db.backends.execute:111 - (0.000) SELECT "auth_permission"."content_type_id", "auth_permission"."codename" FROM "auth_permission" INNER JOIN "django_content_type" ON ("auth_permission"."content_type_id" = "django_content_type"."id") WHERE "auth_permission"."content_type_id" IN (5) ORDER BY "django_content_type"."app_label" ASC, "django_content_type"."model" ASC, "auth_permission"."codename" ASC; args=(5,)
+DEBUG 2019-03-24 10:49:04,088 django.db.backends.execute:111 - (0.000) SELECT "django_content_type"."id", "django_content_type"."app_label", "django_content_type"."model" FROM "django_content_type" WHERE "django_content_type"."app_label" = 'contenttypes'; args=('contenttypes',)
+DEBUG 2019-03-24 10:49:04,089 django.db.backends.execute:111 - (0.000) SELECT "django_content_type"."id", "django_content_type"."app_label", "django_content_type"."model" FROM "django_content_type" WHERE ("django_content_type"."model" = 'session' AND "django_content_type"."app_label" = 'sessions'); args=('session', 'sessions')
+DEBUG 2019-03-24 10:49:04,090 django.db.backends.execute:111 - (0.000) SELECT "auth_permission"."content_type_id", "auth_permission"."codename" FROM "auth_permission" INNER JOIN "django_content_type" ON ("auth_permission"."content_type_id" = "django_content_type"."id") WHERE "auth_permission"."content_type_id" IN (6) ORDER BY "django_content_type"."app_label" ASC, "django_content_type"."model" ASC, "auth_permission"."codename" ASC; args=(6,)
+DEBUG 2019-03-24 10:49:04,091 django.db.backends.execute:111 - (0.000) SELECT "django_content_type"."id", "django_content_type"."app_label", "django_content_type"."model" FROM "django_content_type" WHERE "django_content_type"."app_label" = 'sessions'; args=('sessions',)
+DEBUG 2019-03-24 10:49:04,093 django.db.backends.execute:111 - (0.000) SELECT "django_content_type"."id", "django_content_type"."app_label", "django_content_type"."model" FROM "django_content_type" WHERE "django_content_type"."app_label" = 'import_export'; args=('import_export',)
+DEBUG 2019-03-24 10:49:04,094 django.db.backends.execute:111 - (0.000) SELECT "django_content_type"."id", "django_content_type"."app_label", "django_content_type"."model" FROM "django_content_type" WHERE ("django_content_type"."model" = 'volunteer' AND "django_content_type"."app_label" = 'general_elections'); args=('volunteer', 'general_elections')
+DEBUG 2019-03-24 10:49:04,095 django.db.backends.execute:111 - (0.000) SELECT "django_content_type"."id", "django_content_type"."app_label", "django_content_type"."model" FROM "django_content_type" WHERE ("django_content_type"."model" = 'voterlist' AND "django_content_type"."app_label" = 'general_elections'); args=('voterlist', 'general_elections')
+DEBUG 2019-03-24 10:49:04,095 django.db.backends.execute:111 - (0.000) SELECT "django_content_type"."id", "django_content_type"."app_label", "django_content_type"."model" FROM "django_content_type" WHERE ("django_content_type"."model" = 'admin' AND "django_content_type"."app_label" = 'general_elections'); args=('admin', 'general_elections')
+DEBUG 2019-03-24 10:49:04,096 django.db.backends.execute:111 - (0.000) SELECT "django_content_type"."id", "django_content_type"."app_label", "django_content_type"."model" FROM "django_content_type" WHERE ("django_content_type"."model" = 'contestants' AND "django_content_type"."app_label" = 'general_elections'); args=('contestants', 'general_elections')
+DEBUG 2019-03-24 10:49:04,097 django.db.backends.execute:111 - (0.000) SELECT "django_content_type"."id", "django_content_type"."app_label", "django_content_type"."model" FROM "django_content_type" WHERE ("django_content_type"."model" = 'votespg' AND "django_content_type"."app_label" = 'general_elections'); args=('votespg', 'general_elections')
+DEBUG 2019-03-24 10:49:04,098 django.db.backends.execute:111 - (0.000) SELECT "django_content_type"."id", "django_content_type"."app_label", "django_content_type"."model" FROM "django_content_type" WHERE ("django_content_type"."model" = 'votesug' AND "django_content_type"."app_label" = 'general_elections'); args=('votesug', 'general_elections')
+DEBUG 2019-03-24 10:49:04,099 django.db.backends.execute:111 - (0.000) SELECT "django_content_type"."id", "django_content_type"."app_label", "django_content_type"."model" FROM "django_content_type" WHERE ("django_content_type"."model" = 'voter' AND "django_content_type"."app_label" = 'general_elections'); args=('voter', 'general_elections')
+DEBUG 2019-03-24 10:49:04,101 django.db.backends.execute:111 - (0.001) SELECT "auth_permission"."content_type_id", "auth_permission"."codename" FROM "auth_permission" INNER JOIN "django_content_type" ON ("auth_permission"."content_type_id" = "django_content_type"."id") WHERE "auth_permission"."content_type_id" IN (7, 8, 9, 10, 11, 12, 13) ORDER BY "django_content_type"."app_label" ASC, "django_content_type"."model" ASC, "auth_permission"."codename" ASC; args=(7, 8, 9, 10, 11, 12, 13)
+DEBUG 2019-03-24 10:49:04,102 django.db.backends.execute:111 - (0.000) SELECT "django_content_type"."id", "django_content_type"."app_label", "django_content_type"."model" FROM "django_content_type" WHERE "django_content_type"."app_label" = 'general_elections'; args=('general_elections',)
+DEBUG 2019-03-24 11:13:16,721 django.template._resolve_lookup:878 - Exception while resolving variable 'is_popup' in template 'admin/login.html'.
+Traceback (most recent call last):
+  File "/webapps/elections2019/venv/lib/python3.5/site-packages/django/template/base.py", line 835, in _resolve_lookup
+    current = current[bit]
+  File "/webapps/elections2019/venv/lib/python3.5/site-packages/django/template/context.py", line 83, in __getitem__
+    raise KeyError(key)
+KeyError: 'is_popup'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/webapps/elections2019/venv/lib/python3.5/site-packages/django/template/base.py", line 841, in _resolve_lookup
+    if isinstance(current, BaseContext) and getattr(type(current), bit):
+AttributeError: type object 'RequestContext' has no attribute 'is_popup'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/webapps/elections2019/venv/lib/python3.5/site-packages/django/template/base.py", line 849, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'is_popup'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/webapps/elections2019/venv/lib/python3.5/site-packages/django/template/base.py", line 856, in _resolve_lookup
+    (bit, current))  # missing attribute
+django.template.base.VariableDoesNotExist: Failed lookup for key [is_popup] in [{'True': True, 'False': False, 'None': None}, {'MEDIA_URL': '/elections2019/static/images/', 'messages': <django.contrib.messages.storage.fallback.FallbackStorage object at 0x7f0e5d196710>, 'user': <SimpleLazyObject: <django.contrib.auth.models.AnonymousUser object at 0x7f0e5d196748>>, 'csrf_token': <SimpleLazyObject: <function csrf.<locals>._get_val at 0x7f0e5d14d378>>, 'DEFAULT_MESSAGE_LEVELS': {'INFO': 20, 'WARNING': 30, 'DEBUG': 10, 'SUCCESS': 25, 'ERROR': 40}, 'perms': <django.contrib.auth.context_processors.PermWrapper object at 0x7f0e5d162828>, 'request': <WSGIRequest: GET '/general_elections/admin/login/?next=/general_elections/admin/'>}, {}, {'site_name': '202.141.80.161', 'site_url': '/', 'available_apps': [], 'LANGUAGE_CODE': 'en-us', 'LANGUAGE_BIDI': False, 'form': <AdminAuthenticationForm bound=False, valid=Unknown, fields=(username;password)>, 'next': '/general_elections/admin/', 'app_path': '/general_elections/admin/login/?next=/general_elections/admin/', 'username': '', 'site': <django.contrib.sites.requests.RequestSite object at 0x7f0e5d196b00>, 'site_title': 'Django site admin', 'title': 'Log in', 'has_permission': False, 'view': <django.contrib.auth.views.LoginView object at 0x7f0e5d196898>, 'site_header': 'Django administration'}]
+DEBUG 2019-03-24 11:13:16,723 django.template._resolve_lookup:878 - Exception while resolving variable 'is_popup' in template 'admin/login.html'.
+Traceback (most recent call last):
+  File "/webapps/elections2019/venv/lib/python3.5/site-packages/django/template/base.py", line 835, in _resolve_lookup
+    current = current[bit]
+  File "/webapps/elections2019/venv/lib/python3.5/site-packages/django/template/context.py", line 83, in __getitem__
+    raise KeyError(key)
+KeyError: 'is_popup'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/webapps/elections2019/venv/lib/python3.5/site-packages/django/template/base.py", line 841, in _resolve_lookup
+    if isinstance(current, BaseContext) and getattr(type(current), bit):
+AttributeError: type object 'RequestContext' has no attribute 'is_popup'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/webapps/elections2019/venv/lib/python3.5/site-packages/django/template/base.py", line 849, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'is_popup'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/webapps/elections2019/venv/lib/python3.5/site-packages/django/template/base.py", line 856, in _resolve_lookup
+    (bit, current))  # missing attribute
+django.template.base.VariableDoesNotExist: Failed lookup for key [is_popup] in [{'True': True, 'False': False, 'None': None}, {'MEDIA_URL': '/elections2019/static/images/', 'messages': <django.contrib.messages.storage.fallback.FallbackStorage object at 0x7f0e5d196710>, 'user': <SimpleLazyObject: <django.contrib.auth.models.AnonymousUser object at 0x7f0e5d196748>>, 'csrf_token': <SimpleLazyObject: <function csrf.<locals>._get_val at 0x7f0e5d14d378>>, 'DEFAULT_MESSAGE_LEVELS': {'INFO': 20, 'WARNING': 30, 'DEBUG': 10, 'SUCCESS': 25, 'ERROR': 40}, 'perms': <django.contrib.auth.context_processors.PermWrapper object at 0x7f0e5d162828>, 'request': <WSGIRequest: GET '/general_elections/admin/login/?next=/general_elections/admin/'>}, {}, {'site_name': '202.141.80.161', 'site_url': '/', 'available_apps': [], 'LANGUAGE_CODE': 'en-us', 'LANGUAGE_BIDI': False, 'form': <AdminAuthenticationForm bound=False, valid=Unknown, fields=(username;password)>, 'next': '/general_elections/admin/', 'app_path': '/general_elections/admin/login/?next=/general_elections/admin/', 'username': '', 'site': <django.contrib.sites.requests.RequestSite object at 0x7f0e5d196b00>, 'site_title': 'Django site admin', 'title': 'Log in', 'has_permission': False, 'view': <django.contrib.auth.views.LoginView object at 0x7f0e5d196898>, 'site_header': 'Django administration'}]
+DEBUG 2019-03-24 19:12:06,342 django.db.backends.execute:111 - (0.003) 
+            SELECT c.relname, c.relkind
+            FROM pg_catalog.pg_class c
+            LEFT JOIN pg_catalog.pg_namespace n ON n.oid = c.relnamespace
+            WHERE c.relkind IN ('r', 'v')
+                AND n.nspname NOT IN ('pg_catalog', 'pg_toast')
+                AND pg_catalog.pg_table_is_visible(c.oid); args=None
+DEBUG 2019-03-24 19:12:06,343 django.db.backends.execute:111 - (0.000) SELECT "django_migrations"."app", "django_migrations"."name" FROM "django_migrations"; args=()
+DEBUG 2019-03-24 19:12:06,345 django.db.backends.execute:111 - (0.001) SELECT "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined" FROM "auth_user" WHERE "auth_user"."username" = 'elections2019'; args=('elections2019',)
+DEBUG 2019-03-24 19:12:12,297 django.db.backends.execute:111 - (0.001) SELECT "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined" FROM "auth_user" WHERE "auth_user"."username" = 'elections2019'; args=('elections2019',)
+DEBUG 2019-03-24 19:12:52,859 django.db.backends.execute:111 - (0.001) INSERT INTO "auth_user" ("password", "last_login", "is_superuser", "username", "first_name", "last_name", "email", "is_staff", "is_active", "date_joined") VALUES ('pbkdf2_sha256$100000$ofZUaD7Tkk9c$GGCeyLDOX3K9UMKLG3+LJdo7IIZTGpiMNI+2cv+5wnQ=', NULL, true, 'elections2019', '', '', '', true, true, '2019-03-24T19:12:52.734141+00:00'::timestamptz) RETURNING "auth_user"."id"; args=('pbkdf2_sha256$100000$ofZUaD7Tkk9c$GGCeyLDOX3K9UMKLG3+LJdo7IIZTGpiMNI+2cv+5wnQ=', None, True, 'elections2019', '', '', '', True, True, datetime.datetime(2019, 3, 24, 19, 12, 52, 734141, tzinfo=<UTC>))
+DEBUG 2019-03-24 19:15:05,688 django.template._resolve_lookup:878 - Exception while resolving variable 'is_popup' in template 'admin/login.html'.
+Traceback (most recent call last):
+  File "/webapps/elections2019/venv/lib/python3.5/site-packages/django/template/base.py", line 835, in _resolve_lookup
+    current = current[bit]
+  File "/webapps/elections2019/venv/lib/python3.5/site-packages/django/template/context.py", line 83, in __getitem__
+    raise KeyError(key)
+KeyError: 'is_popup'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/webapps/elections2019/venv/lib/python3.5/site-packages/django/template/base.py", line 841, in _resolve_lookup
+    if isinstance(current, BaseContext) and getattr(type(current), bit):
+AttributeError: type object 'RequestContext' has no attribute 'is_popup'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/webapps/elections2019/venv/lib/python3.5/site-packages/django/template/base.py", line 849, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'is_popup'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/webapps/elections2019/venv/lib/python3.5/site-packages/django/template/base.py", line 856, in _resolve_lookup
+    (bit, current))  # missing attribute
+django.template.base.VariableDoesNotExist: Failed lookup for key [is_popup] in [{'None': None, 'True': True, 'False': False}, {'request': <WSGIRequest: GET '/general_elections/admin/login/?next=/general_elections/admin/'>, 'csrf_token': <SimpleLazyObject: <function csrf.<locals>._get_val at 0x7f46710f80d0>>, 'DEFAULT_MESSAGE_LEVELS': {'WARNING': 30, 'ERROR': 40, 'DEBUG': 10, 'INFO': 20, 'SUCCESS': 25}, 'perms': <django.contrib.auth.context_processors.PermWrapper object at 0x7f4671101c18>, 'user': <SimpleLazyObject: <django.contrib.auth.models.AnonymousUser object at 0x7f467113e6d8>>, 'MEDIA_URL': '/elections2019/static/images/', 'messages': <django.contrib.messages.storage.fallback.FallbackStorage object at 0x7f467113e6a0>}, {}, {'LANGUAGE_CODE': 'en-us', 'view': <django.contrib.auth.views.LoginView object at 0x7f467113e828>, 'site_title': 'Django site admin', 'site_name': '202.141.80.161', 'site_header': 'Django administration', 'title': 'Log in', 'site': <django.contrib.sites.requests.RequestSite object at 0x7f467113ea90>, 'LANGUAGE_BIDI': False, 'form': <AdminAuthenticationForm bound=False, valid=Unknown, fields=(username;password)>, 'site_url': '/', 'next': '/general_elections/admin/', 'username': '', 'app_path': '/general_elections/admin/login/?next=/general_elections/admin/', 'available_apps': [], 'has_permission': False}]
+DEBUG 2019-03-24 19:15:05,690 django.template._resolve_lookup:878 - Exception while resolving variable 'is_popup' in template 'admin/login.html'.
+Traceback (most recent call last):
+  File "/webapps/elections2019/venv/lib/python3.5/site-packages/django/template/base.py", line 835, in _resolve_lookup
+    current = current[bit]
+  File "/webapps/elections2019/venv/lib/python3.5/site-packages/django/template/context.py", line 83, in __getitem__
+    raise KeyError(key)
+KeyError: 'is_popup'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/webapps/elections2019/venv/lib/python3.5/site-packages/django/template/base.py", line 841, in _resolve_lookup
+    if isinstance(current, BaseContext) and getattr(type(current), bit):
+AttributeError: type object 'RequestContext' has no attribute 'is_popup'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/webapps/elections2019/venv/lib/python3.5/site-packages/django/template/base.py", line 849, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'is_popup'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/webapps/elections2019/venv/lib/python3.5/site-packages/django/template/base.py", line 856, in _resolve_lookup
+    (bit, current))  # missing attribute
+django.template.base.VariableDoesNotExist: Failed lookup for key [is_popup] in [{'None': None, 'True': True, 'False': False}, {'request': <WSGIRequest: GET '/general_elections/admin/login/?next=/general_elections/admin/'>, 'csrf_token': <SimpleLazyObject: <function csrf.<locals>._get_val at 0x7f46710f80d0>>, 'DEFAULT_MESSAGE_LEVELS': {'WARNING': 30, 'ERROR': 40, 'DEBUG': 10, 'INFO': 20, 'SUCCESS': 25}, 'perms': <django.contrib.auth.context_processors.PermWrapper object at 0x7f4671101c18>, 'user': <SimpleLazyObject: <django.contrib.auth.models.AnonymousUser object at 0x7f467113e6d8>>, 'MEDIA_URL': '/elections2019/static/images/', 'messages': <django.contrib.messages.storage.fallback.FallbackStorage object at 0x7f467113e6a0>}, {}, {'LANGUAGE_CODE': 'en-us', 'view': <django.contrib.auth.views.LoginView object at 0x7f467113e828>, 'site_title': 'Django site admin', 'site_name': '202.141.80.161', 'site_header': 'Django administration', 'title': 'Log in', 'site': <django.contrib.sites.requests.RequestSite object at 0x7f467113ea90>, 'LANGUAGE_BIDI': False, 'form': <AdminAuthenticationForm bound=False, valid=Unknown, fields=(username;password)>, 'site_url': '/', 'next': '/general_elections/admin/', 'username': '', 'app_path': '/general_elections/admin/login/?next=/general_elections/admin/', 'available_apps': [], 'has_permission': False}]
+DEBUG 2019-03-24 19:15:24,369 django.db.backends.execute:111 - (0.002) SELECT "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined" FROM "auth_user" WHERE "auth_user"."username" = 'elections2019'; args=('elections2019',)
+DEBUG 2019-03-24 19:15:24,495 django.db.backends.execute:111 - (0.001) SELECT (1) AS "a" FROM "django_session" WHERE "django_session"."session_key" = '4up3cy8c79ur8k82mzvvcxlv79mmxnw4' LIMIT 1; args=('4up3cy8c79ur8k82mzvvcxlv79mmxnw4',)
+DEBUG 2019-03-24 19:15:24,496 django.db.backends.execute:111 - (0.001) INSERT INTO "django_session" ("session_key", "session_data", "expire_date") VALUES ('4up3cy8c79ur8k82mzvvcxlv79mmxnw4', 'ZWU4ZjYyZDc3YzJhYzFiODVhNWRkODFkYThlNTExYWViMmQwNjc5Zjp7fQ==', '2019-04-07T19:15:24.495419+00:00'::timestamptz); args=('4up3cy8c79ur8k82mzvvcxlv79mmxnw4', 'ZWU4ZjYyZDc3YzJhYzFiODVhNWRkODFkYThlNTExYWViMmQwNjc5Zjp7fQ==', datetime.datetime(2019, 4, 7, 19, 15, 24, 495419, tzinfo=<UTC>))
+DEBUG 2019-03-24 19:15:24,498 django.db.backends.execute:111 - (0.001) UPDATE "auth_user" SET "last_login" = '2019-03-24T19:15:24.496910+00:00'::timestamptz WHERE "auth_user"."id" = 1; args=(datetime.datetime(2019, 3, 24, 19, 15, 24, 496910, tzinfo=<UTC>), 1)
+DEBUG 2019-03-24 19:15:24,500 django.db.backends.execute:111 - (0.000) UPDATE "django_session" SET "session_data" = 'OTI1MjM5NWEwM2QzYzNiODQ5NWVlNThlZGEwZTQyNDg2NDkyMDQ4ZDp7Il9hdXRoX3VzZXJfaWQiOiIxIiwiX2F1dGhfdXNlcl9iYWNrZW5kIjoiZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5kcy5Nb2RlbEJhY2tlbmQiLCJfYXV0aF91c2VyX2hhc2giOiJmMTMzYTQ4NjgwZWI1ZGM5NjBmNjJhOWM3YzQ5NjRkNDM4MDgzNjdkIn0=', "expire_date" = '2019-04-07T19:15:24.499479+00:00'::timestamptz WHERE "django_session"."session_key" = '4up3cy8c79ur8k82mzvvcxlv79mmxnw4'; args=('OTI1MjM5NWEwM2QzYzNiODQ5NWVlNThlZGEwZTQyNDg2NDkyMDQ4ZDp7Il9hdXRoX3VzZXJfaWQiOiIxIiwiX2F1dGhfdXNlcl9iYWNrZW5kIjoiZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5kcy5Nb2RlbEJhY2tlbmQiLCJfYXV0aF91c2VyX2hhc2giOiJmMTMzYTQ4NjgwZWI1ZGM5NjBmNjJhOWM3YzQ5NjRkNDM4MDgzNjdkIn0=', datetime.datetime(2019, 4, 7, 19, 15, 24, 499479, tzinfo=<UTC>), '4up3cy8c79ur8k82mzvvcxlv79mmxnw4')
+DEBUG 2019-03-24 19:15:24,522 django.db.backends.execute:111 - (0.001) SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE ("django_session"."expire_date" > '2019-03-24T19:15:24.513228+00:00'::timestamptz AND "django_session"."session_key" = '4up3cy8c79ur8k82mzvvcxlv79mmxnw4'); args=(datetime.datetime(2019, 3, 24, 19, 15, 24, 513228, tzinfo=<UTC>), '4up3cy8c79ur8k82mzvvcxlv79mmxnw4')
+DEBUG 2019-03-24 19:15:24,524 django.db.backends.execute:111 - (0.001) SELECT "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined" FROM "auth_user" WHERE "auth_user"."id" = 1; args=(1,)
+DEBUG 2019-03-24 19:15:24,533 django.template._resolve_lookup:878 - Exception while resolving variable 'is_popup' in template 'admin/index.html'.
+Traceback (most recent call last):
+  File "/webapps/elections2019/venv/lib/python3.5/site-packages/django/template/base.py", line 835, in _resolve_lookup
+    current = current[bit]
+  File "/webapps/elections2019/venv/lib/python3.5/site-packages/django/template/context.py", line 83, in __getitem__
+    raise KeyError(key)
+KeyError: 'is_popup'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/webapps/elections2019/venv/lib/python3.5/site-packages/django/template/base.py", line 841, in _resolve_lookup
+    if isinstance(current, BaseContext) and getattr(type(current), bit):
+AttributeError: type object 'RequestContext' has no attribute 'is_popup'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/webapps/elections2019/venv/lib/python3.5/site-packages/django/template/base.py", line 849, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'is_popup'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/webapps/elections2019/venv/lib/python3.5/site-packages/django/template/base.py", line 856, in _resolve_lookup
+    (bit, current))  # missing attribute
+django.template.base.VariableDoesNotExist: Failed lookup for key [is_popup] in [{'None': None, 'True': True, 'False': False}, {'request': <WSGIRequest: GET '/general_elections/admin/'>, 'csrf_token': <SimpleLazyObject: <function csrf.<locals>._get_val at 0x7f46710bfd90>>, 'DEFAULT_MESSAGE_LEVELS': {'WARNING': 30, 'ERROR': 40, 'DEBUG': 10, 'INFO': 20, 'SUCCESS': 25}, 'perms': <django.contrib.auth.context_processors.PermWrapper object at 0x7f467111e208>, 'user': <SimpleLazyObject: <User: elections2019>>, 'MEDIA_URL': '/elections2019/static/images/', 'messages': <django.contrib.messages.storage.fallback.FallbackStorage object at 0x7f467113ea90>}, {}, {'LANGUAGE_CODE': 'en-us', 'site_url': '/', 'LANGUAGE_BIDI': False, 'site_title': 'Django site admin', 'site_header': 'Django administration', 'title': 'Site administration', 'available_apps': [{'app_label': 'auth', 'name': 'Authentication and Authorization', 'has_module_perms': True, 'app_url': '/general_elections/admin/auth/', 'models': [{'admin_url': '/general_elections/admin/auth/group/', 'add_url': '/general_elections/admin/auth/group/add/', 'object_name': 'Group', 'name': 'Groups', 'perms': {'delete': True, 'change': True, 'add': True}}, {'admin_url': '/general_elections/admin/auth/user/', 'add_url': '/general_elections/admin/auth/user/add/', 'object_name': 'User', 'name': 'Users', 'perms': {'delete': True, 'change': True, 'add': True}}]}, {'app_label': 'general_elections', 'name': 'General_Elections', 'has_module_perms': True, 'app_url': '/general_elections/admin/general_elections/', 'models': [{'admin_url': '/general_elections/admin/general_elections/admin/', 'add_url': '/general_elections/admin/general_elections/admin/add/', 'object_name': 'Admin', 'name': 'Admins', 'perms': {'delete': True, 'change': True, 'add': True}}, {'admin_url': '/general_elections/admin/general_elections/contestants/', 'add_url': '/general_elections/admin/general_elections/contestants/add/', 'object_name': 'Contestants', 'name': 'Contestantss', 'perms': {'delete': True, 'change': True, 'add': True}}, {'admin_url': '/general_elections/admin/general_elections/volunteer/', 'add_url': '/general_elections/admin/general_elections/volunteer/add/', 'object_name': 'Volunteer', 'name': 'Volunteers', 'perms': {'delete': True, 'change': True, 'add': True}}, {'admin_url': '/general_elections/admin/general_elections/voterlist/', 'add_url': '/general_elections/admin/general_elections/voterlist/add/', 'object_name': 'VoterList', 'name': 'Voter lists', 'perms': {'delete': True, 'change': True, 'add': True}}]}], 'has_permission': True, 'app_list': [{'app_label': 'auth', 'name': 'Authentication and Authorization', 'has_module_perms': True, 'app_url': '/general_elections/admin/auth/', 'models': [{'admin_url': '/general_elections/admin/auth/group/', 'add_url': '/general_elections/admin/auth/group/add/', 'object_name': 'Group', 'name': 'Groups', 'perms': {'delete': True, 'change': True, 'add': True}}, {'admin_url': '/general_elections/admin/auth/user/', 'add_url': '/general_elections/admin/auth/user/add/', 'object_name': 'User', 'name': 'Users', 'perms': {'delete': True, 'change': True, 'add': True}}]}, {'app_label': 'general_elections', 'name': 'General_Elections', 'has_module_perms': True, 'app_url': '/general_elections/admin/general_elections/', 'models': [{'admin_url': '/general_elections/admin/general_elections/admin/', 'add_url': '/general_elections/admin/general_elections/admin/add/', 'object_name': 'Admin', 'name': 'Admins', 'perms': {'delete': True, 'change': True, 'add': True}}, {'admin_url': '/general_elections/admin/general_elections/contestants/', 'add_url': '/general_elections/admin/general_elections/contestants/add/', 'object_name': 'Contestants', 'name': 'Contestantss', 'perms': {'delete': True, 'change': True, 'add': True}}, {'admin_url': '/general_elections/admin/general_elections/volunteer/', 'add_url': '/general_elections/admin/general_elections/volunteer/add/', 'object_name': 'Volunteer', 'name': 'Volunteers', 'perms': {'delete': True, 'change': True, 'add': True}}, {'admin_url': '/general_elections/admin/general_elections/voterlist/', 'add_url': '/general_elections/admin/general_elections/voterlist/add/', 'object_name': 'VoterList', 'name': 'Voter lists', 'perms': {'delete': True, 'change': True, 'add': True}}]}]}]
+DEBUG 2019-03-24 19:15:24,535 django.template._resolve_lookup:878 - Exception while resolving variable 'is_popup' in template 'admin/index.html'.
+Traceback (most recent call last):
+  File "/webapps/elections2019/venv/lib/python3.5/site-packages/django/template/base.py", line 835, in _resolve_lookup
+    current = current[bit]
+  File "/webapps/elections2019/venv/lib/python3.5/site-packages/django/template/context.py", line 83, in __getitem__
+    raise KeyError(key)
+KeyError: 'is_popup'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/webapps/elections2019/venv/lib/python3.5/site-packages/django/template/base.py", line 841, in _resolve_lookup
+    if isinstance(current, BaseContext) and getattr(type(current), bit):
+AttributeError: type object 'RequestContext' has no attribute 'is_popup'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/webapps/elections2019/venv/lib/python3.5/site-packages/django/template/base.py", line 849, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'is_popup'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/webapps/elections2019/venv/lib/python3.5/site-packages/django/template/base.py", line 856, in _resolve_lookup
+    (bit, current))  # missing attribute
+django.template.base.VariableDoesNotExist: Failed lookup for key [is_popup] in [{'None': None, 'True': True, 'False': False}, {'request': <WSGIRequest: GET '/general_elections/admin/'>, 'csrf_token': <SimpleLazyObject: <function csrf.<locals>._get_val at 0x7f46710bfd90>>, 'DEFAULT_MESSAGE_LEVELS': {'WARNING': 30, 'ERROR': 40, 'DEBUG': 10, 'INFO': 20, 'SUCCESS': 25}, 'perms': <django.contrib.auth.context_processors.PermWrapper object at 0x7f467111e208>, 'user': <SimpleLazyObject: <User: elections2019>>, 'MEDIA_URL': '/elections2019/static/images/', 'messages': <django.contrib.messages.storage.fallback.FallbackStorage object at 0x7f467113ea90>}, {}, {'LANGUAGE_CODE': 'en-us', 'site_url': '/', 'LANGUAGE_BIDI': False, 'site_title': 'Django site admin', 'site_header': 'Django administration', 'title': 'Site administration', 'available_apps': [{'app_label': 'auth', 'name': 'Authentication and Authorization', 'has_module_perms': True, 'app_url': '/general_elections/admin/auth/', 'models': [{'admin_url': '/general_elections/admin/auth/group/', 'add_url': '/general_elections/admin/auth/group/add/', 'object_name': 'Group', 'name': 'Groups', 'perms': {'delete': True, 'change': True, 'add': True}}, {'admin_url': '/general_elections/admin/auth/user/', 'add_url': '/general_elections/admin/auth/user/add/', 'object_name': 'User', 'name': 'Users', 'perms': {'delete': True, 'change': True, 'add': True}}]}, {'app_label': 'general_elections', 'name': 'General_Elections', 'has_module_perms': True, 'app_url': '/general_elections/admin/general_elections/', 'models': [{'admin_url': '/general_elections/admin/general_elections/admin/', 'add_url': '/general_elections/admin/general_elections/admin/add/', 'object_name': 'Admin', 'name': 'Admins', 'perms': {'delete': True, 'change': True, 'add': True}}, {'admin_url': '/general_elections/admin/general_elections/contestants/', 'add_url': '/general_elections/admin/general_elections/contestants/add/', 'object_name': 'Contestants', 'name': 'Contestantss', 'perms': {'delete': True, 'change': True, 'add': True}}, {'admin_url': '/general_elections/admin/general_elections/volunteer/', 'add_url': '/general_elections/admin/general_elections/volunteer/add/', 'object_name': 'Volunteer', 'name': 'Volunteers', 'perms': {'delete': True, 'change': True, 'add': True}}, {'admin_url': '/general_elections/admin/general_elections/voterlist/', 'add_url': '/general_elections/admin/general_elections/voterlist/add/', 'object_name': 'VoterList', 'name': 'Voter lists', 'perms': {'delete': True, 'change': True, 'add': True}}]}], 'has_permission': True, 'app_list': [{'app_label': 'auth', 'name': 'Authentication and Authorization', 'has_module_perms': True, 'app_url': '/general_elections/admin/auth/', 'models': [{'admin_url': '/general_elections/admin/auth/group/', 'add_url': '/general_elections/admin/auth/group/add/', 'object_name': 'Group', 'name': 'Groups', 'perms': {'delete': True, 'change': True, 'add': True}}, {'admin_url': '/general_elections/admin/auth/user/', 'add_url': '/general_elections/admin/auth/user/add/', 'object_name': 'User', 'name': 'Users', 'perms': {'delete': True, 'change': True, 'add': True}}]}, {'app_label': 'general_elections', 'name': 'General_Elections', 'has_module_perms': True, 'app_url': '/general_elections/admin/general_elections/', 'models': [{'admin_url': '/general_elections/admin/general_elections/admin/', 'add_url': '/general_elections/admin/general_elections/admin/add/', 'object_name': 'Admin', 'name': 'Admins', 'perms': {'delete': True, 'change': True, 'add': True}}, {'admin_url': '/general_elections/admin/general_elections/contestants/', 'add_url': '/general_elections/admin/general_elections/contestants/add/', 'object_name': 'Contestants', 'name': 'Contestantss', 'perms': {'delete': True, 'change': True, 'add': True}}, {'admin_url': '/general_elections/admin/general_elections/volunteer/', 'add_url': '/general_elections/admin/general_elections/volunteer/add/', 'object_name': 'Volunteer', 'name': 'Volunteers', 'perms': {'delete': True, 'change': True, 'add': True}}, {'admin_url': '/general_elections/admin/general_elections/voterlist/', 'add_url': '/general_elections/admin/general_elections/voterlist/add/', 'object_name': 'VoterList', 'name': 'Voter lists', 'perms': {'delete': True, 'change': True, 'add': True}}]}]}]
+DEBUG 2019-03-24 19:15:24,541 django.db.backends.execute:111 - (0.001) SELECT "django_admin_log"."id", "django_admin_log"."action_time", "django_admin_log"."user_id", "django_admin_log"."content_type_id", "django_admin_log"."object_id", "django_admin_log"."object_repr", "django_admin_log"."action_flag", "django_admin_log"."change_message", "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined", "django_content_type"."id", "django_content_type"."app_label", "django_content_type"."model" FROM "django_admin_log" INNER JOIN "auth_user" ON ("django_admin_log"."user_id" = "auth_user"."id") LEFT OUTER JOIN "django_content_type" ON ("django_admin_log"."content_type_id" = "django_content_type"."id") WHERE "django_admin_log"."user_id" = 1 ORDER BY "django_admin_log"."action_time" DESC LIMIT 10; args=(1,)
+DEBUG 2019-03-24 19:16:36,789 django.db.backends.execute:111 - (0.002) SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE ("django_session"."expire_date" > '2019-03-24T19:16:36.773849+00:00'::timestamptz AND "django_session"."session_key" = '4up3cy8c79ur8k82mzvvcxlv79mmxnw4'); args=(datetime.datetime(2019, 3, 24, 19, 16, 36, 773849, tzinfo=<UTC>), '4up3cy8c79ur8k82mzvvcxlv79mmxnw4')
+DEBUG 2019-03-24 19:16:36,791 django.db.backends.execute:111 - (0.001) SELECT "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined" FROM "auth_user" WHERE "auth_user"."id" = 1; args=(1,)
+DEBUG 2019-03-24 19:16:36,792 django.db.backends.execute:111 - (0.001) SELECT (1) AS "a" FROM "general_elections_admin" WHERE "general_elections_admin"."user_id" = 1 LIMIT 1; args=(1,)
+DEBUG 2019-03-24 19:16:44,411 django.db.backends.execute:111 - (0.002) SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE ("django_session"."expire_date" > '2019-03-24T19:16:44.398999+00:00'::timestamptz AND "django_session"."session_key" = '4up3cy8c79ur8k82mzvvcxlv79mmxnw4'); args=(datetime.datetime(2019, 3, 24, 19, 16, 44, 398999, tzinfo=<UTC>), '4up3cy8c79ur8k82mzvvcxlv79mmxnw4')
+DEBUG 2019-03-24 19:16:44,414 django.db.backends.execute:111 - (0.001) SELECT "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined" FROM "auth_user" WHERE "auth_user"."id" = 1; args=(1,)
+DEBUG 2019-03-24 19:16:44,461 django.template._resolve_lookup:878 - Exception while resolving variable 'is_popup' in template 'admin/index.html'.
+Traceback (most recent call last):
+  File "/webapps/elections2019/venv/lib/python3.5/site-packages/django/template/base.py", line 835, in _resolve_lookup
+    current = current[bit]
+  File "/webapps/elections2019/venv/lib/python3.5/site-packages/django/template/context.py", line 83, in __getitem__
+    raise KeyError(key)
+KeyError: 'is_popup'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/webapps/elections2019/venv/lib/python3.5/site-packages/django/template/base.py", line 841, in _resolve_lookup
+    if isinstance(current, BaseContext) and getattr(type(current), bit):
+AttributeError: type object 'RequestContext' has no attribute 'is_popup'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/webapps/elections2019/venv/lib/python3.5/site-packages/django/template/base.py", line 849, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'is_popup'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/webapps/elections2019/venv/lib/python3.5/site-packages/django/template/base.py", line 856, in _resolve_lookup
+    (bit, current))  # missing attribute
+django.template.base.VariableDoesNotExist: Failed lookup for key [is_popup] in [{'None': None, 'True': True, 'False': False}, {'request': <WSGIRequest: GET '/general_elections/admin/'>, 'csrf_token': <SimpleLazyObject: <function csrf.<locals>._get_val at 0x7f46710e28c8>>, 'DEFAULT_MESSAGE_LEVELS': {'WARNING': 30, 'ERROR': 40, 'DEBUG': 10, 'INFO': 20, 'SUCCESS': 25}, 'perms': <django.contrib.auth.context_processors.PermWrapper object at 0x7f4671080be0>, 'user': <SimpleLazyObject: <User: elections2019>>, 'MEDIA_URL': '/elections2019/static/images/', 'messages': <django.contrib.messages.storage.fallback.FallbackStorage object at 0x7f467110c4e0>}, {}, {'LANGUAGE_CODE': 'en-us', 'site_url': '/', 'LANGUAGE_BIDI': False, 'site_title': 'Django site admin', 'site_header': 'Django administration', 'title': 'Site administration', 'available_apps': [{'app_label': 'auth', 'name': 'Authentication and Authorization', 'has_module_perms': True, 'app_url': '/general_elections/admin/auth/', 'models': [{'admin_url': '/general_elections/admin/auth/group/', 'add_url': '/general_elections/admin/auth/group/add/', 'object_name': 'Group', 'name': 'Groups', 'perms': {'delete': True, 'change': True, 'add': True}}, {'admin_url': '/general_elections/admin/auth/user/', 'add_url': '/general_elections/admin/auth/user/add/', 'object_name': 'User', 'name': 'Users', 'perms': {'delete': True, 'change': True, 'add': True}}]}, {'app_label': 'general_elections', 'name': 'General_Elections', 'has_module_perms': True, 'app_url': '/general_elections/admin/general_elections/', 'models': [{'admin_url': '/general_elections/admin/general_elections/admin/', 'add_url': '/general_elections/admin/general_elections/admin/add/', 'object_name': 'Admin', 'name': 'Admins', 'perms': {'delete': True, 'change': True, 'add': True}}, {'admin_url': '/general_elections/admin/general_elections/contestants/', 'add_url': '/general_elections/admin/general_elections/contestants/add/', 'object_name': 'Contestants', 'name': 'Contestantss', 'perms': {'delete': True, 'change': True, 'add': True}}, {'admin_url': '/general_elections/admin/general_elections/volunteer/', 'add_url': '/general_elections/admin/general_elections/volunteer/add/', 'object_name': 'Volunteer', 'name': 'Volunteers', 'perms': {'delete': True, 'change': True, 'add': True}}, {'admin_url': '/general_elections/admin/general_elections/voterlist/', 'add_url': '/general_elections/admin/general_elections/voterlist/add/', 'object_name': 'VoterList', 'name': 'Voter lists', 'perms': {'delete': True, 'change': True, 'add': True}}]}], 'has_permission': True, 'app_list': [{'app_label': 'auth', 'name': 'Authentication and Authorization', 'has_module_perms': True, 'app_url': '/general_elections/admin/auth/', 'models': [{'admin_url': '/general_elections/admin/auth/group/', 'add_url': '/general_elections/admin/auth/group/add/', 'object_name': 'Group', 'name': 'Groups', 'perms': {'delete': True, 'change': True, 'add': True}}, {'admin_url': '/general_elections/admin/auth/user/', 'add_url': '/general_elections/admin/auth/user/add/', 'object_name': 'User', 'name': 'Users', 'perms': {'delete': True, 'change': True, 'add': True}}]}, {'app_label': 'general_elections', 'name': 'General_Elections', 'has_module_perms': True, 'app_url': '/general_elections/admin/general_elections/', 'models': [{'admin_url': '/general_elections/admin/general_elections/admin/', 'add_url': '/general_elections/admin/general_elections/admin/add/', 'object_name': 'Admin', 'name': 'Admins', 'perms': {'delete': True, 'change': True, 'add': True}}, {'admin_url': '/general_elections/admin/general_elections/contestants/', 'add_url': '/general_elections/admin/general_elections/contestants/add/', 'object_name': 'Contestants', 'name': 'Contestantss', 'perms': {'delete': True, 'change': True, 'add': True}}, {'admin_url': '/general_elections/admin/general_elections/volunteer/', 'add_url': '/general_elections/admin/general_elections/volunteer/add/', 'object_name': 'Volunteer', 'name': 'Volunteers', 'perms': {'delete': True, 'change': True, 'add': True}}, {'admin_url': '/general_elections/admin/general_elections/voterlist/', 'add_url': '/general_elections/admin/general_elections/voterlist/add/', 'object_name': 'VoterList', 'name': 'Voter lists', 'perms': {'delete': True, 'change': True, 'add': True}}]}]}]
+DEBUG 2019-03-24 19:16:44,464 django.template._resolve_lookup:878 - Exception while resolving variable 'is_popup' in template 'admin/index.html'.
+Traceback (most recent call last):
+  File "/webapps/elections2019/venv/lib/python3.5/site-packages/django/template/base.py", line 835, in _resolve_lookup
+    current = current[bit]
+  File "/webapps/elections2019/venv/lib/python3.5/site-packages/django/template/context.py", line 83, in __getitem__
+    raise KeyError(key)
+KeyError: 'is_popup'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/webapps/elections2019/venv/lib/python3.5/site-packages/django/template/base.py", line 841, in _resolve_lookup
+    if isinstance(current, BaseContext) and getattr(type(current), bit):
+AttributeError: type object 'RequestContext' has no attribute 'is_popup'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/webapps/elections2019/venv/lib/python3.5/site-packages/django/template/base.py", line 849, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'is_popup'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/webapps/elections2019/venv/lib/python3.5/site-packages/django/template/base.py", line 856, in _resolve_lookup
+    (bit, current))  # missing attribute
+django.template.base.VariableDoesNotExist: Failed lookup for key [is_popup] in [{'None': None, 'True': True, 'False': False}, {'request': <WSGIRequest: GET '/general_elections/admin/'>, 'csrf_token': <SimpleLazyObject: <function csrf.<locals>._get_val at 0x7f46710e28c8>>, 'DEFAULT_MESSAGE_LEVELS': {'WARNING': 30, 'ERROR': 40, 'DEBUG': 10, 'INFO': 20, 'SUCCESS': 25}, 'perms': <django.contrib.auth.context_processors.PermWrapper object at 0x7f4671080be0>, 'user': <SimpleLazyObject: <User: elections2019>>, 'MEDIA_URL': '/elections2019/static/images/', 'messages': <django.contrib.messages.storage.fallback.FallbackStorage object at 0x7f467110c4e0>}, {}, {'LANGUAGE_CODE': 'en-us', 'site_url': '/', 'LANGUAGE_BIDI': False, 'site_title': 'Django site admin', 'site_header': 'Django administration', 'title': 'Site administration', 'available_apps': [{'app_label': 'auth', 'name': 'Authentication and Authorization', 'has_module_perms': True, 'app_url': '/general_elections/admin/auth/', 'models': [{'admin_url': '/general_elections/admin/auth/group/', 'add_url': '/general_elections/admin/auth/group/add/', 'object_name': 'Group', 'name': 'Groups', 'perms': {'delete': True, 'change': True, 'add': True}}, {'admin_url': '/general_elections/admin/auth/user/', 'add_url': '/general_elections/admin/auth/user/add/', 'object_name': 'User', 'name': 'Users', 'perms': {'delete': True, 'change': True, 'add': True}}]}, {'app_label': 'general_elections', 'name': 'General_Elections', 'has_module_perms': True, 'app_url': '/general_elections/admin/general_elections/', 'models': [{'admin_url': '/general_elections/admin/general_elections/admin/', 'add_url': '/general_elections/admin/general_elections/admin/add/', 'object_name': 'Admin', 'name': 'Admins', 'perms': {'delete': True, 'change': True, 'add': True}}, {'admin_url': '/general_elections/admin/general_elections/contestants/', 'add_url': '/general_elections/admin/general_elections/contestants/add/', 'object_name': 'Contestants', 'name': 'Contestantss', 'perms': {'delete': True, 'change': True, 'add': True}}, {'admin_url': '/general_elections/admin/general_elections/volunteer/', 'add_url': '/general_elections/admin/general_elections/volunteer/add/', 'object_name': 'Volunteer', 'name': 'Volunteers', 'perms': {'delete': True, 'change': True, 'add': True}}, {'admin_url': '/general_elections/admin/general_elections/voterlist/', 'add_url': '/general_elections/admin/general_elections/voterlist/add/', 'object_name': 'VoterList', 'name': 'Voter lists', 'perms': {'delete': True, 'change': True, 'add': True}}]}], 'has_permission': True, 'app_list': [{'app_label': 'auth', 'name': 'Authentication and Authorization', 'has_module_perms': True, 'app_url': '/general_elections/admin/auth/', 'models': [{'admin_url': '/general_elections/admin/auth/group/', 'add_url': '/general_elections/admin/auth/group/add/', 'object_name': 'Group', 'name': 'Groups', 'perms': {'delete': True, 'change': True, 'add': True}}, {'admin_url': '/general_elections/admin/auth/user/', 'add_url': '/general_elections/admin/auth/user/add/', 'object_name': 'User', 'name': 'Users', 'perms': {'delete': True, 'change': True, 'add': True}}]}, {'app_label': 'general_elections', 'name': 'General_Elections', 'has_module_perms': True, 'app_url': '/general_elections/admin/general_elections/', 'models': [{'admin_url': '/general_elections/admin/general_elections/admin/', 'add_url': '/general_elections/admin/general_elections/admin/add/', 'object_name': 'Admin', 'name': 'Admins', 'perms': {'delete': True, 'change': True, 'add': True}}, {'admin_url': '/general_elections/admin/general_elections/contestants/', 'add_url': '/general_elections/admin/general_elections/contestants/add/', 'object_name': 'Contestants', 'name': 'Contestantss', 'perms': {'delete': True, 'change': True, 'add': True}}, {'admin_url': '/general_elections/admin/general_elections/volunteer/', 'add_url': '/general_elections/admin/general_elections/volunteer/add/', 'object_name': 'Volunteer', 'name': 'Volunteers', 'perms': {'delete': True, 'change': True, 'add': True}}, {'admin_url': '/general_elections/admin/general_elections/voterlist/', 'add_url': '/general_elections/admin/general_elections/voterlist/add/', 'object_name': 'VoterList', 'name': 'Voter lists', 'perms': {'delete': True, 'change': True, 'add': True}}]}]}]
+DEBUG 2019-03-24 19:16:44,473 django.db.backends.execute:111 - (0.002) SELECT "django_admin_log"."id", "django_admin_log"."action_time", "django_admin_log"."user_id", "django_admin_log"."content_type_id", "django_admin_log"."object_id", "django_admin_log"."object_repr", "django_admin_log"."action_flag", "django_admin_log"."change_message", "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined", "django_content_type"."id", "django_content_type"."app_label", "django_content_type"."model" FROM "django_admin_log" INNER JOIN "auth_user" ON ("django_admin_log"."user_id" = "auth_user"."id") LEFT OUTER JOIN "django_content_type" ON ("django_admin_log"."content_type_id" = "django_content_type"."id") WHERE "django_admin_log"."user_id" = 1 ORDER BY "django_admin_log"."action_time" DESC LIMIT 10; args=(1,)
+DEBUG 2019-03-24 19:16:47,673 django.db.backends.execute:111 - (0.002) SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE ("django_session"."expire_date" > '2019-03-24T19:16:47.661533+00:00'::timestamptz AND "django_session"."session_key" = '4up3cy8c79ur8k82mzvvcxlv79mmxnw4'); args=(datetime.datetime(2019, 3, 24, 19, 16, 47, 661533, tzinfo=<UTC>), '4up3cy8c79ur8k82mzvvcxlv79mmxnw4')
+DEBUG 2019-03-24 19:16:47,675 django.db.backends.execute:111 - (0.001) SELECT "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined" FROM "auth_user" WHERE "auth_user"."id" = 1; args=(1,)
+DEBUG 2019-03-24 19:16:47,677 django.db.backends.execute:111 - (0.001) SELECT COUNT(*) AS "__count" FROM "general_elections_admin"; args=()
+DEBUG 2019-03-24 19:16:47,678 django.db.backends.execute:111 - (0.000) SELECT COUNT(*) AS "__count" FROM "general_elections_admin"; args=()
+DEBUG 2019-03-24 19:16:47,682 django.db.backends.execute:111 - (0.001) SELECT "general_elections_admin"."id", "general_elections_admin"."user_id" FROM "general_elections_admin" ORDER BY "general_elections_admin"."id" DESC; args=()
+DEBUG 2019-03-24 19:16:47,700 django.template._resolve_lookup:878 - Exception while resolving variable 'errors' in template 'admin/change_list.html'.
+Traceback (most recent call last):
+  File "/webapps/elections2019/venv/lib/python3.5/site-packages/django/template/base.py", line 835, in _resolve_lookup
+    current = current[bit]
+TypeError: 'NoneType' object is not subscriptable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/webapps/elections2019/venv/lib/python3.5/site-packages/django/template/base.py", line 843, in _resolve_lookup
+    current = getattr(current, bit)
+AttributeError: 'NoneType' object has no attribute 'errors'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/webapps/elections2019/venv/lib/python3.5/site-packages/django/template/base.py", line 849, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'errors'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/webapps/elections2019/venv/lib/python3.5/site-packages/django/template/base.py", line 856, in _resolve_lookup
+    (bit, current))  # missing attribute
+django.template.base.VariableDoesNotExist: Failed lookup for key [errors] in None
+DEBUG 2019-03-24 19:16:47,704 django.template._resolve_lookup:878 - Exception while resolving variable 'show' in template 'admin/change_list.html'.
+Traceback (most recent call last):
+  File "/webapps/elections2019/venv/lib/python3.5/site-packages/django/template/base.py", line 835, in _resolve_lookup
+    current = current[bit]
+  File "/webapps/elections2019/venv/lib/python3.5/site-packages/django/template/context.py", line 83, in __getitem__
+    raise KeyError(key)
+KeyError: 'show'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/webapps/elections2019/venv/lib/python3.5/site-packages/django/template/base.py", line 841, in _resolve_lookup
+    if isinstance(current, BaseContext) and getattr(type(current), bit):
+AttributeError: type object 'RequestContext' has no attribute 'show'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/webapps/elections2019/venv/lib/python3.5/site-packages/django/template/base.py", line 849, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'show'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/webapps/elections2019/venv/lib/python3.5/site-packages/django/template/base.py", line 856, in _resolve_lookup
+    (bit, current))  # missing attribute
+django.template.base.VariableDoesNotExist: Failed lookup for key [show] in [{'csrf_token': <SimpleLazyObject: <function csrf.<locals>._get_val at 0x7f46710bfd08>>, 'None': None, 'True': True, 'False': False}]
+DEBUG 2019-03-24 19:16:47,704 django.template._resolve_lookup:878 - Exception while resolving variable 'is_multipart' in template 'admin/change_list.html'.
+Traceback (most recent call last):
+  File "/webapps/elections2019/venv/lib/python3.5/site-packages/django/template/base.py", line 835, in _resolve_lookup
+    current = current[bit]
+TypeError: 'NoneType' object is not subscriptable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/webapps/elections2019/venv/lib/python3.5/site-packages/django/template/base.py", line 843, in _resolve_lookup
+    current = getattr(current, bit)
+AttributeError: 'NoneType' object has no attribute 'is_multipart'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/webapps/elections2019/venv/lib/python3.5/site-packages/django/template/base.py", line 849, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'is_multipart'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/webapps/elections2019/venv/lib/python3.5/site-packages/django/template/base.py", line 856, in _resolve_lookup
+    (bit, current))  # missing attribute
+django.template.base.VariableDoesNotExist: Failed lookup for key [is_multipart] in None
+DEBUG 2019-03-24 19:16:47,820 django.db.backends.execute:111 - (0.002) SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE ("django_session"."expire_date" > '2019-03-24T19:16:47.808448+00:00'::timestamptz AND "django_session"."session_key" = '4up3cy8c79ur8k82mzvvcxlv79mmxnw4'); args=(datetime.datetime(2019, 3, 24, 19, 16, 47, 808448, tzinfo=<UTC>), '4up3cy8c79ur8k82mzvvcxlv79mmxnw4')
+DEBUG 2019-03-24 19:16:47,822 django.db.backends.execute:111 - (0.001) SELECT "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined" FROM "auth_user" WHERE "auth_user"."id" = 1; args=(1,)
+DEBUG 2019-03-24 19:16:50,446 django.db.backends.execute:111 - (0.002) SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE ("django_session"."expire_date" > '2019-03-24T19:16:50.434430+00:00'::timestamptz AND "django_session"."session_key" = '4up3cy8c79ur8k82mzvvcxlv79mmxnw4'); args=(datetime.datetime(2019, 3, 24, 19, 16, 50, 434430, tzinfo=<UTC>), '4up3cy8c79ur8k82mzvvcxlv79mmxnw4')
+DEBUG 2019-03-24 19:16:50,448 django.db.backends.execute:111 - (0.001) SELECT "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined" FROM "auth_user" WHERE "auth_user"."id" = 1; args=(1,)
+DEBUG 2019-03-24 19:16:50,455 django.db.backends.execute:111 - (0.001) SELECT "django_content_type"."id", "django_content_type"."app_label", "django_content_type"."model" FROM "django_content_type" WHERE ("django_content_type"."app_label" = 'general_elections' AND "django_content_type"."model" = 'admin'); args=('general_elections', 'admin')
+DEBUG 2019-03-24 19:16:50,479 django.db.backends.execute:111 - (0.001) DECLARE "_django_curs_139942142895872_1" NO SCROLL CURSOR WITH HOLD FOR SELECT "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined" FROM "auth_user" ORDER BY "auth_user"."username" ASC; args=()
+DEBUG 2019-03-24 19:16:50,486 django.template._resolve_lookup:878 - Exception while resolving variable 'can_delete_related' in template 'admin/widgets/related_widget_wrapper.html'.
+Traceback (most recent call last):
+  File "/webapps/elections2019/venv/lib/python3.5/site-packages/django/template/base.py", line 835, in _resolve_lookup
+    current = current[bit]
+  File "/webapps/elections2019/venv/lib/python3.5/site-packages/django/template/context.py", line 83, in __getitem__
+    raise KeyError(key)
+KeyError: 'can_delete_related'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/webapps/elections2019/venv/lib/python3.5/site-packages/django/template/base.py", line 841, in _resolve_lookup
+    if isinstance(current, BaseContext) and getattr(type(current), bit):
+AttributeError: type object 'Context' has no attribute 'can_delete_related'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/webapps/elections2019/venv/lib/python3.5/site-packages/django/template/base.py", line 849, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'can_delete_related'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/webapps/elections2019/venv/lib/python3.5/site-packages/django/template/base.py", line 856, in _resolve_lookup
+    (bit, current))  # missing attribute
+django.template.base.VariableDoesNotExist: Failed lookup for key [can_delete_related] in [{'None': None, 'True': True, 'False': False}, {'add_related_url': '/general_elections/admin/auth/user/add/', 'change_related_template_url': '/general_elections/admin/auth/user/__fk__/change/', 'rendered_widget': '<select name="user" id="id_user" required>\n  <option value="" selected>---------</option>\n\n  <option value="1">elections2019</option>\n\n</select>', 'model': 'user', 'can_change_related': True, 'can_add_related': True, 'name': 'user', 'url_params': '_to_field=id&_popup=1'}, {'block': <Block Node: links. Contents: [<TextNode: '\n        '>, <django.template.defaulttags.SpacelessNode object at 0x7f46710a6dd8>, <TextNode: '\n    '>]>}]
+DEBUG 2019-03-24 19:16:50,585 django.db.backends.execute:111 - (0.002) SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE ("django_session"."expire_date" > '2019-03-24T19:16:50.569200+00:00'::timestamptz AND "django_session"."session_key" = '4up3cy8c79ur8k82mzvvcxlv79mmxnw4'); args=(datetime.datetime(2019, 3, 24, 19, 16, 50, 569200, tzinfo=<UTC>), '4up3cy8c79ur8k82mzvvcxlv79mmxnw4')
+DEBUG 2019-03-24 19:16:50,587 django.db.backends.execute:111 - (0.001) SELECT "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined" FROM "auth_user" WHERE "auth_user"."id" = 1; args=(1,)
+DEBUG 2019-03-24 19:16:56,318 django.db.backends.execute:111 - (0.002) SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE ("django_session"."expire_date" > '2019-03-24T19:16:56.306690+00:00'::timestamptz AND "django_session"."session_key" = '4up3cy8c79ur8k82mzvvcxlv79mmxnw4'); args=(datetime.datetime(2019, 3, 24, 19, 16, 56, 306690, tzinfo=<UTC>), '4up3cy8c79ur8k82mzvvcxlv79mmxnw4')
+DEBUG 2019-03-24 19:16:56,321 django.db.backends.execute:111 - (0.001) SELECT "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined" FROM "auth_user" WHERE "auth_user"."id" = 1; args=(1,)
+DEBUG 2019-03-24 19:16:56,325 django.db.backends.execute:111 - (0.001) SELECT "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined" FROM "auth_user" WHERE "auth_user"."id" = 1; args=(1,)
+DEBUG 2019-03-24 19:16:56,327 django.db.backends.execute:111 - (0.000) SELECT (1) AS "a" FROM "auth_user" WHERE "auth_user"."id" = 1 LIMIT 1; args=(1,)
+DEBUG 2019-03-24 19:16:56,329 django.db.backends.execute:111 - (0.001) SELECT (1) AS "a" FROM "general_elections_admin" WHERE "general_elections_admin"."user_id" = 1 LIMIT 1; args=(1,)
+DEBUG 2019-03-24 19:16:56,330 django.db.backends.execute:111 - (0.001) INSERT INTO "general_elections_admin" ("user_id") VALUES (1) RETURNING "general_elections_admin"."id"; args=(1,)
+DEBUG 2019-03-24 19:16:56,332 django.db.backends.execute:111 - (0.001) SELECT "django_content_type"."id", "django_content_type"."app_label", "django_content_type"."model" FROM "django_content_type" WHERE ("django_content_type"."app_label" = 'general_elections' AND "django_content_type"."model" = 'admin'); args=('general_elections', 'admin')
+DEBUG 2019-03-24 19:16:56,334 django.db.backends.execute:111 - (0.001) INSERT INTO "django_admin_log" ("action_time", "user_id", "content_type_id", "object_id", "object_repr", "action_flag", "change_message") VALUES ('2019-03-24T19:16:56.332772+00:00'::timestamptz, 1, 10, '1', 'elections2019', 1, '[{"added": {}}]') RETURNING "django_admin_log"."id"; args=(datetime.datetime(2019, 3, 24, 19, 16, 56, 332772, tzinfo=<UTC>), 1, 10, '1', 'elections2019', 1, '[{"added": {}}]')
+DEBUG 2019-03-24 19:16:56,382 django.db.backends.execute:111 - (0.002) SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE ("django_session"."expire_date" > '2019-03-24T19:16:56.371336+00:00'::timestamptz AND "django_session"."session_key" = '4up3cy8c79ur8k82mzvvcxlv79mmxnw4'); args=(datetime.datetime(2019, 3, 24, 19, 16, 56, 371336, tzinfo=<UTC>), '4up3cy8c79ur8k82mzvvcxlv79mmxnw4')
+DEBUG 2019-03-24 19:16:56,384 django.db.backends.execute:111 - (0.001) SELECT "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined" FROM "auth_user" WHERE "auth_user"."id" = 1; args=(1,)
+DEBUG 2019-03-24 19:16:56,386 django.db.backends.execute:111 - (0.001) SELECT COUNT(*) AS "__count" FROM "general_elections_admin"; args=()
+DEBUG 2019-03-24 19:16:56,387 django.db.backends.execute:111 - (0.000) SELECT COUNT(*) AS "__count" FROM "general_elections_admin"; args=()
+DEBUG 2019-03-24 19:16:56,392 django.db.backends.execute:111 - (0.001) SELECT "general_elections_admin"."id", "general_elections_admin"."user_id" FROM "general_elections_admin" ORDER BY "general_elections_admin"."id" DESC; args=()
+DEBUG 2019-03-24 19:16:56,408 django.template._resolve_lookup:878 - Exception while resolving variable 'errors' in template 'admin/change_list.html'.
+Traceback (most recent call last):
+  File "/webapps/elections2019/venv/lib/python3.5/site-packages/django/template/base.py", line 835, in _resolve_lookup
+    current = current[bit]
+TypeError: 'NoneType' object is not subscriptable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/webapps/elections2019/venv/lib/python3.5/site-packages/django/template/base.py", line 843, in _resolve_lookup
+    current = getattr(current, bit)
+AttributeError: 'NoneType' object has no attribute 'errors'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/webapps/elections2019/venv/lib/python3.5/site-packages/django/template/base.py", line 849, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'errors'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/webapps/elections2019/venv/lib/python3.5/site-packages/django/template/base.py", line 856, in _resolve_lookup
+    (bit, current))  # missing attribute
+django.template.base.VariableDoesNotExist: Failed lookup for key [errors] in None
+DEBUG 2019-03-24 19:16:56,411 django.template._resolve_lookup:878 - Exception while resolving variable 'show' in template 'admin/change_list.html'.
+Traceback (most recent call last):
+  File "/webapps/elections2019/venv/lib/python3.5/site-packages/django/template/base.py", line 835, in _resolve_lookup
+    current = current[bit]
+  File "/webapps/elections2019/venv/lib/python3.5/site-packages/django/template/context.py", line 83, in __getitem__
+    raise KeyError(key)
+KeyError: 'show'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/webapps/elections2019/venv/lib/python3.5/site-packages/django/template/base.py", line 841, in _resolve_lookup
+    if isinstance(current, BaseContext) and getattr(type(current), bit):
+AttributeError: type object 'RequestContext' has no attribute 'show'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/webapps/elections2019/venv/lib/python3.5/site-packages/django/template/base.py", line 849, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'show'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/webapps/elections2019/venv/lib/python3.5/site-packages/django/template/base.py", line 856, in _resolve_lookup
+    (bit, current))  # missing attribute
+django.template.base.VariableDoesNotExist: Failed lookup for key [show] in [{'csrf_token': <SimpleLazyObject: <function csrf.<locals>._get_val at 0x7f4671169400>>, 'None': None, 'True': True, 'False': False}]
+DEBUG 2019-03-24 19:16:56,411 django.template._resolve_lookup:878 - Exception while resolving variable 'is_multipart' in template 'admin/change_list.html'.
+Traceback (most recent call last):
+  File "/webapps/elections2019/venv/lib/python3.5/site-packages/django/template/base.py", line 835, in _resolve_lookup
+    current = current[bit]
+TypeError: 'NoneType' object is not subscriptable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/webapps/elections2019/venv/lib/python3.5/site-packages/django/template/base.py", line 843, in _resolve_lookup
+    current = getattr(current, bit)
+AttributeError: 'NoneType' object has no attribute 'is_multipart'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/webapps/elections2019/venv/lib/python3.5/site-packages/django/template/base.py", line 849, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'is_multipart'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/webapps/elections2019/venv/lib/python3.5/site-packages/django/template/base.py", line 856, in _resolve_lookup
+    (bit, current))  # missing attribute
+django.template.base.VariableDoesNotExist: Failed lookup for key [is_multipart] in None
+DEBUG 2019-03-24 19:16:56,423 django.db.backends.execute:111 - (0.000) SELECT "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined" FROM "auth_user" WHERE "auth_user"."id" = 1; args=(1,)
+DEBUG 2019-03-24 19:16:56,426 django.template._resolve_lookup:878 - Exception while resolving variable 'non_field_errors' in template 'admin/change_list.html'.
+Traceback (most recent call last):
+  File "/webapps/elections2019/venv/lib/python3.5/site-packages/django/template/base.py", line 835, in _resolve_lookup
+    current = current[bit]
+TypeError: 'NoneType' object is not subscriptable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/webapps/elections2019/venv/lib/python3.5/site-packages/django/template/base.py", line 843, in _resolve_lookup
+    current = getattr(current, bit)
+AttributeError: 'NoneType' object has no attribute 'non_field_errors'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/webapps/elections2019/venv/lib/python3.5/site-packages/django/template/base.py", line 849, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'non_field_errors'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/webapps/elections2019/venv/lib/python3.5/site-packages/django/template/base.py", line 856, in _resolve_lookup
+    (bit, current))  # missing attribute
+django.template.base.VariableDoesNotExist: Failed lookup for key [non_field_errors] in None
+DEBUG 2019-03-24 19:16:56,510 django.db.backends.execute:111 - (0.002) SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE ("django_session"."expire_date" > '2019-03-24T19:16:56.498542+00:00'::timestamptz AND "django_session"."session_key" = '4up3cy8c79ur8k82mzvvcxlv79mmxnw4'); args=(datetime.datetime(2019, 3, 24, 19, 16, 56, 498542, tzinfo=<UTC>), '4up3cy8c79ur8k82mzvvcxlv79mmxnw4')
+DEBUG 2019-03-24 19:16:56,512 django.db.backends.execute:111 - (0.001) SELECT "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined" FROM "auth_user" WHERE "auth_user"."id" = 1; args=(1,)
+DEBUG 2019-03-24 19:17:08,632 django.db.backends.execute:111 - (0.002) SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE ("django_session"."expire_date" > '2019-03-24T19:17:08.619903+00:00'::timestamptz AND "django_session"."session_key" = '4up3cy8c79ur8k82mzvvcxlv79mmxnw4'); args=(datetime.datetime(2019, 3, 24, 19, 17, 8, 619903, tzinfo=<UTC>), '4up3cy8c79ur8k82mzvvcxlv79mmxnw4')
+DEBUG 2019-03-24 19:17:08,634 django.db.backends.execute:111 - (0.001) SELECT "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined" FROM "auth_user" WHERE "auth_user"."id" = 1; args=(1,)
+DEBUG 2019-03-24 19:17:08,636 django.db.backends.execute:111 - (0.001) SELECT (1) AS "a" FROM "general_elections_admin" WHERE "general_elections_admin"."user_id" = 1 LIMIT 1; args=(1,)
+DEBUG 2019-03-24 19:17:12,317 django.db.backends.execute:111 - (0.002) SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE ("django_session"."expire_date" > '2019-03-24T19:17:12.304325+00:00'::timestamptz AND "django_session"."session_key" = '4up3cy8c79ur8k82mzvvcxlv79mmxnw4'); args=(datetime.datetime(2019, 3, 24, 19, 17, 12, 304325, tzinfo=<UTC>), '4up3cy8c79ur8k82mzvvcxlv79mmxnw4')
+DEBUG 2019-03-24 19:17:12,319 django.db.backends.execute:111 - (0.001) SELECT "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined" FROM "auth_user" WHERE "auth_user"."id" = 1; args=(1,)
+DEBUG 2019-03-24 19:17:12,321 django.db.backends.execute:111 - (0.001) SELECT (1) AS "a" FROM "general_elections_admin" WHERE "general_elections_admin"."user_id" = 1 LIMIT 1; args=(1,)
+DEBUG 2019-03-24 19:17:12,960 django.db.backends.execute:111 - (0.002) SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE ("django_session"."expire_date" > '2019-03-24T19:17:12.948298+00:00'::timestamptz AND "django_session"."session_key" = '4up3cy8c79ur8k82mzvvcxlv79mmxnw4'); args=(datetime.datetime(2019, 3, 24, 19, 17, 12, 948298, tzinfo=<UTC>), '4up3cy8c79ur8k82mzvvcxlv79mmxnw4')
+DEBUG 2019-03-24 19:17:12,962 django.db.backends.execute:111 - (0.001) SELECT "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined" FROM "auth_user" WHERE "auth_user"."id" = 1; args=(1,)
+DEBUG 2019-03-24 19:17:12,964 django.db.backends.execute:111 - (0.001) SELECT (1) AS "a" FROM "general_elections_admin" WHERE "general_elections_admin"."user_id" = 1 LIMIT 1; args=(1,)

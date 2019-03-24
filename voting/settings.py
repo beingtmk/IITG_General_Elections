@@ -119,7 +119,8 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.0/howto/static-files/
 
-STATIC_URL = '/elections2019/static/'
+STATIC_URL = '/general_elections/static/'
+#STATIC_ROOT = 'static/'
 
 LOGIN_URL = '/login/'
 
