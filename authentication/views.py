@@ -21,7 +21,7 @@ def home(request):
 
 def gettoken(request):
   auth_code = request.GET['code']
-  # redirect_uri = request.build_absolute_uri(reverse('authentication:gettoken'))
+  redirect_uri = request.build_absolute_uri(reverse('authentication:gettoken'))
   redirect_uri = 'https://swc.iitg.ac.in/general_elections/authentication/gettoken/'
   
   token = get_token_from_code(auth_code, redirect_uri)
