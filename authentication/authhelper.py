@@ -26,9 +26,12 @@ token_url = '{0}{1}'.format(
 # The scopes required by the app
 scopes = ['openid',
           'offline_access',
-          'User.Read',
-          'Mail.Read']
+          'User.Read']
 
+proxies = {
+    'http': 'http://tusharyadav:merimaa52@202.141.80.20:3128',
+    'https': 'http://tusharyadav:merimaa52@202.141.80.20:3128',
+    }
 
 def get_signin_url(redirect_uri):
     # Build the query parameters for the signin url
@@ -55,15 +58,9 @@ def get_token_from_code(auth_code, redirect_uri):
                  'client_secret': client_secret
                  }
 
-    proxies = {
-                 'http': 'http://tusharyadav:merimaa52@202.141.80.20:3128',
-                 'https': 'http://tusharyadav:merimaa52@202.141.80.20:3128',
-
-                 }
-
     logger.info(requests.get('https://google.com', proxies=proxies))
 
-    r = requests.post(token_url, data=post_data)
+    r = requests.post(token_url, data=post_data, proxies=proxies)
 
     try:
         return r.json()
@@ -81,7 +78,7 @@ def get_token_from_refresh_token(refresh_token, redirect_uri):
                  'client_secret': client_secret,
                  }
 
-    r = requests.post(token_url, data=post_data)
+    r = requests.post(token_url, data=post_data, , proxies=proxies)
 
     try:
         return r.json()

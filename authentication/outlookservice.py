@@ -6,6 +6,10 @@ graph_endpoint = 'https://graph.microsoft.com/v1.0{0}'
 
 # Generic API Sending
 
+proxies = {
+    'http': 'http://tusharyadav:merimaa52@202.141.80.20:3128',
+    'https': 'http://tusharyadav:merimaa52@202.141.80.20:3128',
+    }
 
 def make_api_call(method, url, token, payload=None, parameters=None):
     # Send these headers with all API calls
@@ -25,17 +29,17 @@ def make_api_call(method, url, token, payload=None, parameters=None):
     response = None
 
     if (method.upper() == 'GET'):
-        response = requests.get(url, headers=headers, params=parameters)
+        response = requests.get(url, headers=headers, params=parameters, proxies=proxies)
     elif (method.upper() == 'DELETE'):
-        response = requests.delete(url, headers=headers, params=parameters)
+        response = requests.delete(url, headers=headers, params=parameters, proxies=proxies)
     elif (method.upper() == 'PATCH'):
         headers.update({'Content-Type': 'application/json'})
         response = requests.patch(
-            url, headers=headers, data=json.dumps(payload), params=parameters)
+            url, headers=headers, data=json.dumps(payload), params=parameters, proxies=proxies)
     elif (method.upper() == 'POST'):
         headers.update({'Content-Type': 'application/json'})
         response = requests.post(url, headers=headers,
-                                 data=json.dumps(payload), params=parameters)
+                                 data=json.dumps(payload), params=parameters, proxies=proxies)
 
     return response
 
