@@ -183,7 +183,7 @@ LOGGING = {
 			'level': 'INFO',
 			'propagate': True,
 		},
-                'authenticaion': {
+                'authentication': {
                         'handlers': ['file_elections'],
                         'level': 'INFO',
                         'propagate': True,
