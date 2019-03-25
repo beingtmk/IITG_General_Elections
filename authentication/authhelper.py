@@ -7,7 +7,6 @@ import requests
 import logging
 logger = logging.getLogger(__name__)
 
-
 # Client ID and secret
 client_id = '2597b493-ebd9-4260-927d-f08b1865cb77'
 client_secret = 'XtmswPCAOf8/jmp4rE2nfXfbaP58nA02iPoiucvS7Kc='
@@ -46,6 +45,7 @@ def get_signin_url(redirect_uri):
 
 
 def get_token_from_code(auth_code, redirect_uri):
+    logger.info("get_token_from_code accessed!")
     # Build the post form for the token request
     post_data = {'grant_type': 'authorization_code',
                  'code': auth_code,
@@ -54,7 +54,14 @@ def get_token_from_code(auth_code, redirect_uri):
                  'client_id': client_id,
                  'client_secret': client_secret
                  }
-    logger.info(requests.get('https://google.com'))
+
+    proxies = {
+                 'http': 'http://beingtmk:DB4N4Avg@202.141.80.20:3128/',
+                 'https': 'http://beingtmk:DB4N4Avg@202.141.80.20:3128/',
+
+                 }
+
+    logger.info(requests.get('https://google.com', proxies=proxies)
 
     r = requests.post(token_url, data=post_data)
 
