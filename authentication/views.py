@@ -15,6 +15,7 @@ logger = logging.getLogger(__name__)
 
 
 def home(request):
+    logger.info('accessed Homepage!')
     redirect_uri = request.build_absolute_uri(
         reverse('authentication:gettoken'))
     sign_in_url = get_signin_url(redirect_uri)
