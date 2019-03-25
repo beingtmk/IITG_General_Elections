@@ -74,8 +74,8 @@ WSGI_APPLICATION = 'voting.wsgi.application'
 DATABASES = {
 	'default': {
 		'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'elections_db',
-        'USER': 'elections',
+        'NAME': 'elections',
+        'USER': 'election_user',
         'PASSWORD': 'GGMU',
         'HOST': 'localhost',
         'PORT': '',
@@ -183,11 +183,11 @@ LOGGING = {
 			'level': 'INFO',
 			'propagate': True,
 		},
-                'authenticaion': {
-                        'handlers': ['file_elections'],
-                        'level': 'INFO',
-                        'propagate': True,
-                }, 
+		'authentication': {
+						'handlers': ['file_elections'],
+						'level': 'INFO',
+						'propagate': True,
+		}, 
 
 	},
 }

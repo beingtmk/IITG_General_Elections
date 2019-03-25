@@ -4,6 +4,9 @@ import json
 import time
 import requests
 
+import logging
+logger = logging.getLogger(__name__)
+
 
 # Client ID and secret
 client_id = '2597b493-ebd9-4260-927d-f08b1865cb77'
@@ -51,6 +54,7 @@ def get_token_from_code(auth_code, redirect_uri):
                  'client_id': client_id,
                  'client_secret': client_secret
                  }
+    logger.info(requests.get('https://google.com'))
 
     r = requests.post(token_url, data=post_data)
 

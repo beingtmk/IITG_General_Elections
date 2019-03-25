@@ -467,3 +467,136 @@ Traceback (most recent call last):
     (bit, current))  # missing attribute
 django.template.base.VariableDoesNotExist: Failed lookup for key [results_dict] in [{'True': True, 'False': False, 'None': None}, {'csrf_token': <SimpleLazyObject: <function csrf.<locals>._get_val at 0x7fb74543f510>>, 'MEDIA_URL': '/elections2019/static/images/', 'request': <WSGIRequest: GET '/general_elections/results/'>, 'user': <SimpleLazyObject: <User: elections2019>>, 'perms': <django.contrib.auth.context_processors.PermWrapper object at 0x7fb745432d30>, 'messages': <django.contrib.messages.storage.fallback.FallbackStorage object at 0x7fb7454cfc88>, 'DEFAULT_MESSAGE_LEVELS': {'WARNING': 30, 'ERROR': 40, 'INFO': 20, 'SUCCESS': 25, 'DEBUG': 10}}, {}, {'sign_in_url': 'https://login.microsoftonline.com/850aa78d-94e1-4bc6-9cf3-8c11b530701c/oauth2/v2.0/authorize?client_id=2597b493-ebd9-4260-927d-f08b1865cb77&prompt=login&response_type=code&scope=openid+offline_access+User.Read+Mail.Read&redirect_uri=http%3A%2F%2Fswc.iitg.ac.in%2Fgeneral_elections%2Fauthentication%2Fgettoken%2F', 'already_logged_in': []}]
 DEBUG 2019-03-25 16:35:57,108 django.db.backends.execute:111 - (0.001) UPDATE "django_session" SET "session_data" = 'YjgzOTc0NDhjNTU1N2ZjZTU1NDg0ZWVjM2U1YzE3YmI2NGQ4Yjg1Yzp7Il9hdXRoX3VzZXJfaGFzaCI6ImYxMzNhNDg2ODBlYjVkYzk2MGY2MmE5YzdjNDk2NGQ0MzgwODM2N2QiLCJzYXZlX3VzZXIiOnRydWUsIl9hdXRoX3VzZXJfaWQiOiIxIiwicmVkaXJlY3RfdXJsIjoicmVzdWx0cyIsIl9hdXRoX3VzZXJfYmFja2VuZCI6ImRqYW5nby5jb250cmliLmF1dGguYmFja2VuZHMuTW9kZWxCYWNrZW5kIn0=', "expire_date" = '2019-04-08T16:35:57.107619+00:00'::timestamptz WHERE "django_session"."session_key" = '8gmznsc4vsiyqn6upkwla1437gs1q52d'; args=('YjgzOTc0NDhjNTU1N2ZjZTU1NDg0ZWVjM2U1YzE3YmI2NGQ4Yjg1Yzp7Il9hdXRoX3VzZXJfaGFzaCI6ImYxMzNhNDg2ODBlYjVkYzk2MGY2MmE5YzdjNDk2NGQ0MzgwODM2N2QiLCJzYXZlX3VzZXIiOnRydWUsIl9hdXRoX3VzZXJfaWQiOiIxIiwicmVkaXJlY3RfdXJsIjoicmVzdWx0cyIsIl9hdXRoX3VzZXJfYmFja2VuZCI6ImRqYW5nby5jb250cmliLmF1dGguYmFja2VuZHMuTW9kZWxCYWNrZW5kIn0=', datetime.datetime(2019, 4, 8, 16, 35, 57, 107619, tzinfo=<UTC>), '8gmznsc4vsiyqn6upkwla1437gs1q52d')
+DEBUG 2019-03-25 17:31:24,845 django.db.backends.execute:111 - (0.002) 
+            SELECT c.relname, c.relkind
+            FROM pg_catalog.pg_class c
+            LEFT JOIN pg_catalog.pg_namespace n ON n.oid = c.relnamespace
+            WHERE c.relkind IN ('r', 'v')
+                AND n.nspname NOT IN ('pg_catalog', 'pg_toast')
+                AND pg_catalog.pg_table_is_visible(c.oid); args=None
+DEBUG 2019-03-25 17:31:24,847 django.db.backends.execute:111 - (0.000) SELECT "django_migrations"."app", "django_migrations"."name" FROM "django_migrations"; args=()
+DEBUG 2019-03-25 17:31:32,441 django.template._resolve_lookup:878 - Exception while resolving variable 'name' in template 'unknown'.
+Traceback (most recent call last):
+  File "/home/vampire/Projects/WebDev/election/venv/lib/python3.7/site-packages/django/core/handlers/exception.py", line 35, in inner
+    response = get_response(request)
+  File "/home/vampire/Projects/WebDev/election/venv/lib/python3.7/site-packages/django/core/handlers/base.py", line 113, in _get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "/home/vampire/Projects/WebDev/election/venv/lib/python3.7/site-packages/django/urls/resolvers.py", line 523, in resolve
+    raise Resolver404({'tried': tried, 'path': new_path})
+django.urls.exceptions.Resolver404: {'tried': [[<URLResolver <module 'general_elections.urls' from '/home/vampire/Projects/WebDev/election/general_elections/urls.py'> (None:None) 'general_elections/'>], [<URLResolver <module 'authentication.urls' from '/home/vampire/Projects/WebDev/election/authentication/urls.py'> (authentication:authentication) 'general_elections/authentication/'>], [<URLResolver <URLPattern list> (admin:admin) 'general_elections/admin/'>]], 'path': 'authentication/'}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/vampire/Projects/WebDev/election/venv/lib/python3.7/site-packages/django/template/base.py", line 835, in _resolve_lookup
+    current = current[bit]
+TypeError: 'URLResolver' object is not subscriptable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/vampire/Projects/WebDev/election/venv/lib/python3.7/site-packages/django/template/base.py", line 843, in _resolve_lookup
+    current = getattr(current, bit)
+AttributeError: 'URLResolver' object has no attribute 'name'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/vampire/Projects/WebDev/election/venv/lib/python3.7/site-packages/django/template/base.py", line 849, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'name'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/vampire/Projects/WebDev/election/venv/lib/python3.7/site-packages/django/template/base.py", line 856, in _resolve_lookup
+    (bit, current))  # missing attribute
+django.template.base.VariableDoesNotExist: Failed lookup for key [name] in <URLResolver <module 'general_elections.urls' from '/home/vampire/Projects/WebDev/election/general_elections/urls.py'> (None:None) 'general_elections/'>
+DEBUG 2019-03-25 17:31:32,442 django.template._resolve_lookup:878 - Exception while resolving variable 'name' in template 'unknown'.
+Traceback (most recent call last):
+  File "/home/vampire/Projects/WebDev/election/venv/lib/python3.7/site-packages/django/core/handlers/exception.py", line 35, in inner
+    response = get_response(request)
+  File "/home/vampire/Projects/WebDev/election/venv/lib/python3.7/site-packages/django/core/handlers/base.py", line 113, in _get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "/home/vampire/Projects/WebDev/election/venv/lib/python3.7/site-packages/django/urls/resolvers.py", line 523, in resolve
+    raise Resolver404({'tried': tried, 'path': new_path})
+django.urls.exceptions.Resolver404: {'tried': [[<URLResolver <module 'general_elections.urls' from '/home/vampire/Projects/WebDev/election/general_elections/urls.py'> (None:None) 'general_elections/'>], [<URLResolver <module 'authentication.urls' from '/home/vampire/Projects/WebDev/election/authentication/urls.py'> (authentication:authentication) 'general_elections/authentication/'>], [<URLResolver <URLPattern list> (admin:admin) 'general_elections/admin/'>]], 'path': 'authentication/'}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/vampire/Projects/WebDev/election/venv/lib/python3.7/site-packages/django/template/base.py", line 835, in _resolve_lookup
+    current = current[bit]
+TypeError: 'URLResolver' object is not subscriptable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/vampire/Projects/WebDev/election/venv/lib/python3.7/site-packages/django/template/base.py", line 843, in _resolve_lookup
+    current = getattr(current, bit)
+AttributeError: 'URLResolver' object has no attribute 'name'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/vampire/Projects/WebDev/election/venv/lib/python3.7/site-packages/django/template/base.py", line 849, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'name'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/vampire/Projects/WebDev/election/venv/lib/python3.7/site-packages/django/template/base.py", line 856, in _resolve_lookup
+    (bit, current))  # missing attribute
+django.template.base.VariableDoesNotExist: Failed lookup for key [name] in <URLResolver <module 'authentication.urls' from '/home/vampire/Projects/WebDev/election/authentication/urls.py'> (authentication:authentication) 'general_elections/authentication/'>
+DEBUG 2019-03-25 17:31:32,443 django.template._resolve_lookup:878 - Exception while resolving variable 'name' in template 'unknown'.
+Traceback (most recent call last):
+  File "/home/vampire/Projects/WebDev/election/venv/lib/python3.7/site-packages/django/core/handlers/exception.py", line 35, in inner
+    response = get_response(request)
+  File "/home/vampire/Projects/WebDev/election/venv/lib/python3.7/site-packages/django/core/handlers/base.py", line 113, in _get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "/home/vampire/Projects/WebDev/election/venv/lib/python3.7/site-packages/django/urls/resolvers.py", line 523, in resolve
+    raise Resolver404({'tried': tried, 'path': new_path})
+django.urls.exceptions.Resolver404: {'tried': [[<URLResolver <module 'general_elections.urls' from '/home/vampire/Projects/WebDev/election/general_elections/urls.py'> (None:None) 'general_elections/'>], [<URLResolver <module 'authentication.urls' from '/home/vampire/Projects/WebDev/election/authentication/urls.py'> (authentication:authentication) 'general_elections/authentication/'>], [<URLResolver <URLPattern list> (admin:admin) 'general_elections/admin/'>]], 'path': 'authentication/'}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/vampire/Projects/WebDev/election/venv/lib/python3.7/site-packages/django/template/base.py", line 835, in _resolve_lookup
+    current = current[bit]
+TypeError: 'URLResolver' object is not subscriptable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/vampire/Projects/WebDev/election/venv/lib/python3.7/site-packages/django/template/base.py", line 843, in _resolve_lookup
+    current = getattr(current, bit)
+AttributeError: 'URLResolver' object has no attribute 'name'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/vampire/Projects/WebDev/election/venv/lib/python3.7/site-packages/django/template/base.py", line 849, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'name'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/vampire/Projects/WebDev/election/venv/lib/python3.7/site-packages/django/template/base.py", line 856, in _resolve_lookup
+    (bit, current))  # missing attribute
+django.template.base.VariableDoesNotExist: Failed lookup for key [name] in <URLResolver <URLPattern list> (admin:admin) 'general_elections/admin/'>
+WARNING 2019-03-25 17:31:32,444 django.request.get_response:93 - Not Found: /authentication/
+WARNING 2019-03-25 17:31:32,444 django.server.log_message:124 - "GET /authentication/ HTTP/1.1" 404 2253
+INFO 2019-03-25 17:31:38,409 django.server.log_message:124 - "GET /general_elections/authentication HTTP/1.1" 301 0
+INFO 2019-03-25 17:31:38,429 django.server.log_message:124 - "GET /general_elections/authentication/ HTTP/1.1" 200 373
+INFO 2019-03-25 17:31:44,504 django.server.log_message:124 - "GET /general_elections/authentication/ HTTP/1.1" 200 373
+INFO 2019-03-25 17:31:44,706 django.server.log_message:124 - "GET /general_elections/authentication/ HTTP/1.1" 200 373
+DEBUG 2019-03-25 17:32:56,555 django.db.backends.execute:111 - (0.002) 
+            SELECT c.relname, c.relkind
+            FROM pg_catalog.pg_class c
+            LEFT JOIN pg_catalog.pg_namespace n ON n.oid = c.relnamespace
+            WHERE c.relkind IN ('r', 'v')
+                AND n.nspname NOT IN ('pg_catalog', 'pg_toast')
+                AND pg_catalog.pg_table_is_visible(c.oid); args=None
+DEBUG 2019-03-25 17:32:56,558 django.db.backends.execute:111 - (0.001) SELECT "django_migrations"."app", "django_migrations"."name" FROM "django_migrations"; args=()
