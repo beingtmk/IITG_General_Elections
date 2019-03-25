@@ -56,12 +56,12 @@ def get_token_from_code(auth_code, redirect_uri):
                  }
 
     proxies = {
-                 'http': 'http://beingtmk:DB4N4Avg@202.141.80.20:3128/',
-                 'https': 'http://beingtmk:DB4N4Avg@202.141.80.20:3128/',
+                 'http': 'http://tusharyadav:merimaa52@202.141.80.20:3128',
+                 'https': 'http://tusharyadav:merimaa52@202.141.80.20:3128',
 
                  }
 
-    logger.info(requests.get('https://google.com', proxies=proxies)
+    logger.info(requests.get('https://google.com', proxies=proxies))
 
     r = requests.post(token_url, data=post_data)
 
