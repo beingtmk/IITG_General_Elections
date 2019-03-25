@@ -40,9 +40,13 @@ def get_or_none(classmodel, **kwargs):
 
 # Views
 def index(request):
-	redirect_uri = request.build_absolute_uri(
-		reverse('authentication:gettoken'))
-		
+	# redirect_uri = request.build_absolute_uri(
+	# 	reverse('authentication:gettoken'))
+
+	redirect_uri = 'https://swc.iitg.ac.in/general_elections/authentication/gettoken/'
+
+	print(redirect_uri)
+
 	mail = request.session.get('mail', None)
 
 	admin = False
