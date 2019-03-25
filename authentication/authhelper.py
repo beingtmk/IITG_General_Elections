@@ -78,7 +78,7 @@ def get_token_from_refresh_token(refresh_token, redirect_uri):
                  'client_secret': client_secret,
                  }
 
-    r = requests.post(token_url, data=post_data, , proxies=proxies)
+    r = requests.post(token_url, data=post_data, proxies=proxies)
 
     try:
         return r.json()
