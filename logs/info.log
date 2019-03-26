@@ -368,6 +368,7 @@ INFO 2019-03-26 18:34:45,640 general_elections.views.views_voter.voter_login:53 
 INFO 2019-03-26 18:37:10,825 general_elections.views.views_admin.create_volunteer:172 - Admin: elections posted a create volunteer form
 INFO 2019-03-26 18:37:10,961 general_elections.views.views_admin.create_volunteer:187 - Admin: elections created volunteer with username=kothapalli
 INFO 2019-03-26 18:37:19,752 general_elections.views.views_admin.admin_logout:162 - Admin: elections logging out
+<<<<<<< HEAD
 INFO 2019-03-26 18:39:29,046 authentication.views.gettoken:29 - code: OAQABAAIAAACEfexXxjamQb3OeGQ4GugvrnP63kT9bv18gtZv-1gBSep9YBjtxAt95zfj1f8KrbBpx9IFNZetqoq7nT7kHLMH02Pst3yT6dzbIPFS4L3OcRnTm6hvSo6Rn676V5us0S6wb_IQOTch5LkVNZpjvqZh_T8kRMtJy-8VgXZUAdhm2gcUKaE_VQQmuxK5YehrtBW9vM3d04HohKLp242Syjt5wPKgVI39Bvxe9ltlFzwpOh51WjHofa0gqYtuqYNzTPGCiFkxo1UxcXO6LYGOxbpKD8mAbmwJOvIWQukhPTaMM37WlC6k7vE6chLkcltSLw7aRk5r-lb6JEyvDZ-rDnPejspNXdwyGaWrPHOwCiyVPkd-4ss5mLB7MJMHdC9ZEYE4dT2jiv2rzYuEmXODX9VPOuzu5G9koMMTl3JQdUug248iR_yYHrDoh7_x_f8iUxtvN4dCDCSv5igACezTMUhoEfGz2IUeQ5dFoWTR1vfb7dqXl82u-A8v0Nd5LXKF2X9NXpsYXCzZIbtShjVIXkqNQ2iKiCGAij5NH8D2RPVGgTlWEv_aWf5zgKxq-0xlQsa90HuJ5Og_lODYYfjNdJXglTr3fOuCLctGFhkGfnm1J8btFHCl34ws4grb4K_ABbA1JJm8Hndg2cvc2NcsZ3O0Xbvwfi8KoQB5HPBkkPZU5SAA
 INFO 2019-03-26 18:39:29,046 authentication.authhelper.get_token_from_code:51 - get_token_from_code accessed!
 INFO 2019-03-26 18:39:29,874 authentication.authhelper.get_token_from_code:61 - <Response [200]>
@@ -377,3 +378,5 @@ INFO 2019-03-26 18:39:31,775 authentication.views.gettoken:40 - user: {'mail': '
 INFO 2019-03-26 18:39:45,156 general_elections.views.views_voter.voter_logout:74 - Voter: beingtmk logged out.
 INFO 2019-03-26 18:39:45,558 general_elections.views.views_volunteer.volunteer_login_new:77 - Volunteer: tusharyadav logging in
 INFO 2019-03-26 18:39:47,972 general_elections.views.views_volunteer.volunteer_logout:56 - Volunteer: tusharyadav logging out
+=======
+>>>>>>> c6cddbe91e17e2750d6310865b314031340b52e9
