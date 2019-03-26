@@ -129,7 +129,7 @@ os.path.join(BASE_DIR, "static"),
 ]
 
 # Media files
-MEDIA_URL = '/elections2019/static/images/'
+MEDIA_URL = '/general_elections/static/images/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'static/images')
 
 # Add templates to DIRS
