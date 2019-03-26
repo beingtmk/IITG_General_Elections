@@ -549,7 +549,7 @@ ADMINS = set(['swc', 'dos', 'elections', 'm.dave'])
 # @never_cache
 def results_login(request):
 	if request.method == "GET":
-		redirect_uri = request.build_absolute_uri(reverse('authentication:gettoken'))
+		redirect_uri = "https://swc.iitg.ac.in/general_elections/authentication/gettoken/"
 		request.session['save_user'] = True
 		request.session['redirect_url'] = 'results'
 		already_logged_in = request.session.get('logins', list())
@@ -572,7 +572,6 @@ def results_login(request):
 def results_logout(request):
 	logger.info('Loggging out all admins from results view')
 	request.session.pop('logins')
-	request.session.pop('prev')
 	return redirect('admin_panel')
 
 @login_required(login_url='/general_elections/admin_login/')
