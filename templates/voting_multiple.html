@@ -64,7 +64,9 @@ transform: scale(1.5, 1.5);
 			  		{% endif %} 
 			  		name = "{{wizard.steps.current}}-contestants" value="{{c.webmail_id}}" id="id_{{wizard.steps.current}}-contestants_{{forloop.counter}}" />
 			  	</td>
-			  	<td><img src="{% static 'images/{{c.webmail_id}}.jpg' %}" class="ui fluid image" style="width:120px;height:120px;"></td>
+			                                    {% static "" as baseUrl %}
+			                                     <td><img src="{{baseUrl}}/images/{{c.image}}" class="ui fluid image" style="width:120px;height:120px;"></td>
+
 			  	<td>{{c.name }}</td>
 			  	<td>{{c.post }}</td>
 			  	<td>

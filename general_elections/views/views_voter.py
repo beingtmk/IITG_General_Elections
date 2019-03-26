@@ -73,7 +73,7 @@ def voter_logout(request):
 	request.user.save()
 	logger.info('Voter: %s logged out.', request.user.username)
 	logout(request)
-	return redirect('login')
+	return redirect('index')
 
 def show_girls_senators(user):
 	u = VoterList.objects.get(webmail_id=user.username)
@@ -283,4 +283,6 @@ class VoteWizard(SessionWizardView):
 			vote_dict['pgs'] = l
 		save_data(self.request, vote_dict)
 		logger.info('Voter: %s logged out', self.request.user.username)
-		return render(self.request, 'login.html', {'msg': 'Vote recorded!'})
+		messages.success(self.request,'%s, Your Vote has been recorded!' %self.request.user.username)
+
+		return redirect('logout')
